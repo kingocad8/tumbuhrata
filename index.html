@@ -462,6 +462,51 @@
         .landing-actions .btn{padding:10px 12px}
         .landing-bar .brand-logo{font-size:.95rem}
       }
+      /* ---------- GELOMBANG A+B (v2.1) ---------- */
+      .complete-locked{opacity:.45}
+      .complete-lock-note[hidden]{display:none!important}
+      .complete-locked button,.complete-locked input,.complete-locked textarea,.complete-locked select,.complete-locked a{pointer-events:none}
+      .child-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+      .trend-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+      .trend-row:last-of-type{border-bottom:0}
+      .chart-box{margin-top:14px;background:var(--surface2);border-radius:var(--r-md);padding:14px}
+      .chart-box svg{width:100%;height:auto;display:block}
+      .chart-cap{font-size:.8rem;color:var(--muted);margin-top:8px}
+      .consult-sheet{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-md);padding:20px;margin-top:14px}
+      .consult-sheet h4{font-family:"Nunito",sans-serif;margin:14px 0 6px}
+      .consult-sheet h4:first-child{margin-top:0}
+      .consult-sheet ul{margin:6px 0 0;padding-left:20px}
+      .consult-sheet li{margin:3px 0;font-size:.93rem}
+      .consult-sheet .q-lines{border-bottom:1.5px solid var(--line);min-height:1.7em;font-size:.93rem;padding:2px 0}
+      textarea.input{resize:vertical;min-height:76px}
+      .print-cards{display:grid;gap:12px;margin-top:14px}
+      @media(min-width:760px){.print-cards{grid-template-columns:1fr 1fr}}
+      .print-card{border:1.5px solid var(--line);border-radius:var(--r-md);padding:14px 16px;background:var(--surface)}
+      .print-card h5{margin:0;font-family:"Nunito",sans-serif;font-size:1rem}
+      .print-card p{margin:5px 0 0;font-size:.88rem;color:var(--muted)}
+      .print-card .alat{font-size:.8rem;font-weight:700;color:var(--brand-deep);margin-top:6px}
+      @media (prefers-color-scheme: dark){.print-card .alat{color:var(--brand)}}
+      table.week-plan{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:12px}
+      table.week-plan th{text-align:left;padding:8px;background:var(--surface2)}
+      table.week-plan td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+      @media(max-width:640px){
+        table.week-plan,table.week-plan tbody,table.week-plan tr,table.week-plan td{display:block;width:100%}
+        table.week-plan thead{display:none}
+        table.week-plan tr{border-bottom:2px solid var(--line);padding:6px 0}
+        table.week-plan td{border-bottom:0;padding:4px 8px}
+      }
+      .vocab-row{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line)}
+      .vocab-row:last-of-type{border-bottom:0}
+      @media print{
+        #landing,#landing-en,#gate,footer,.chat-fab,.chat-panel,.toast,.acct-bar,#profil,.tabbar-sticky,.no-print,.lock-note{display:none!important}
+        #hasil .sec-head,#hasil-body,#trend-card,.export-band,.hasil-disc{display:none!important}
+        #pendidikan .sec-head,#pendidikan .phase-tabs,#act-grid{display:none!important}
+        #cek .tool-card,#parenting .tool-card,#parenting .who-strip{display:none!important}
+        #vocab-card .tool-card,#daily-card .tool-card,#safety-card .tool-card{display:block!important}
+        .consult-sheet,.print-card{border-color:#999;break-inside:avoid}
+        .tool-card{box-shadow:none}
+        #app{padding-bottom:0}
+      }
       @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.btn:active{transform:none}.toast{transition:none}}
     </style>
   </head>
@@ -770,6 +815,9 @@
               <ul>
                 <li><i data-lucide="check" class="icon"></i>1 kategori worksheet (pilih: Tumbuh Kembang / Pendidikan / Parenting)</li>
                 <li><i data-lucide="check" class="icon"></i>Berlaku untuk semua usia 1–3 tahun — semua titik cek dan fase pada kategori pilihan Anda</li>
+                <li><i data-lucide="check" class="icon"></i>Lembar Siap Konsultasi siap cetak untuk kategori pilihan Anda</li>
+                <li><i data-lucide="check" class="icon"></i>Pengingat cek ulang lewat kalender (.ics / Google Calendar)</li>
+                <li><i data-lucide="check" class="icon"></i>Checklist keamanan rumah balita (Parenting) &amp; kartu aktivitas cetak (Pendidikan)</li>
                 <li><i data-lucide="check" class="icon"></i>Export hasil ke Excel</li>
               </ul>
               <a class="btn btn-ghost" href="https://lynk.id/ochadpage" target="_blank" rel="noopener"><i data-lucide="shopping-bag" class="icon"></i>Beli lewat Lynk</a>
@@ -781,6 +829,12 @@
               <div class="amt">Rp99.000 <small>sekali bayar</small></div>
               <ul>
                 <li><i data-lucide="check" class="icon"></i>Ketiga kategori worksheet, usia 1–3 tahun lengkap</li>
+                <li><i data-lucide="check" class="icon"></i>Lembar Siap Konsultasi gabungan — siap cetak untuk dibawa ke dokter anak / Posyandu</li>
+                <li><i data-lucide="check" class="icon"></i>Tren antar-cek: riwayat hasil milestone dari waktu ke waktu</li>
+                <li><i data-lucide="check" class="icon"></i>Pencatat harian layar, aktivitas &amp; tidur + grafik mingguan (acuan WHO 2019)</li>
+                <li><i data-lucide="check" class="icon"></i>Log kosakata &amp; jurnal momen pertama anak</li>
+                <li><i data-lucide="check" class="icon"></i>Rencana main 4 minggu + kartu aktivitas siap cetak</li>
+                <li><i data-lucide="check" class="icon"></i>Profil 2 anak dalam satu akun</li>
                 <li><i data-lucide="check" class="icon"></i>Export hasil ke Excel + sheet rekap</li>
                 <li><i data-lucide="check" class="icon"></i>Update materi selama produk ini berjalan</li>
                 <li><i data-lucide="check" class="icon"></i>Garansi 7 hari</li>
@@ -1068,6 +1122,9 @@
               <ul>
                 <li><i data-lucide="check" class="icon"></i>1 of the 3 categories — you choose: Milestones, Learning, or Parenting</li>
                 <li><i data-lucide="check" class="icon"></i>All ages 1–3 years included in that category (every checkpoint, both age bands)</li>
+                <li><i data-lucide="check" class="icon"></i>Printable Appointment Sheet for your chosen category</li>
+                <li><i data-lucide="check" class="icon"></i>Re-check reminder via calendar (.ics / Google Calendar)</li>
+                <li><i data-lucide="check" class="icon"></i>Home-safety checklist (Parenting) &amp; printable activity cards (Learning)</li>
                 <li><i data-lucide="check" class="icon"></i>Auto-save, Excel export, Ask AI included</li>
               </ul>
               <a class="btn btn-ghost" href="https://kingocad.gumroad.com" target="_blank" rel="noopener"><i data-lucide="shopping-bag" class="icon"></i>Buy Basic on Gumroad</a>
@@ -1081,6 +1138,12 @@
                 <li><i data-lucide="check" class="icon"></i>All 3 categories: Milestones + Learning + Parenting</li>
                 <li><i data-lucide="check" class="icon"></i>All checkpoints 12–36 months and both Learning age bands</li>
                 <li><i data-lucide="check" class="icon"></i>2-week play plans built from your milestone answers</li>
+                <li><i data-lucide="check" class="icon"></i>Combined printable Appointment Sheet to bring to your pediatrician</li>
+                <li><i data-lucide="check" class="icon"></i>Progress trend: milestone results tracked over time</li>
+                <li><i data-lucide="check" class="icon"></i>Daily screen, activity &amp; sleep tracker with weekly charts (WHO 2019)</li>
+                <li><i data-lucide="check" class="icon"></i>Vocabulary log &amp; first-moments journal</li>
+                <li><i data-lucide="check" class="icon"></i>4-week play plan + printable activity cards</li>
+                <li><i data-lucide="check" class="icon"></i>Profiles for 2 children in one account</li>
                 <li><i data-lucide="check" class="icon"></i>Auto-save, Excel export, Ask AI included</li>
               </ul>
               <a class="btn btn-brand" href="https://kingocad.gumroad.com" target="_blank" rel="noopener"><i data-lucide="shopping-bag" class="icon"></i>Buy Complete on Gumroad</a>
@@ -1164,6 +1227,7 @@
             </div>
             <p class="fineprint">Tersimpan di akun Google Anda &amp; tersinkron antar perangkat (HP dan laptop). Nama panggilan tampil di file Excel hasil unduhan.</p>
           </div>
+          <div id="child-bar"></div>
 
         </div>
       </section>
@@ -1197,6 +1261,8 @@
             <span><b>Hasil skrining awal, bukan diagnosis.</b> Satu butir “Belum” bukan vonis. Bila ragu, konsultasikan ke dokter anak / Posyandu / Puskesmas.</span>
           </div>
           <div id="hasil-body"></div>
+          <div id="trend-card"></div>
+          <div id="consult-card"></div>
           <div class="export-band">
             <div>
               <h3><i data-lucide="file-spreadsheet" class="icon" style="color:var(--brand)"></i>Unduh Hasil ke Excel</h3>
@@ -1235,6 +1301,7 @@
             <p class="disclaimer">Cek mandiri ini adalah alat pantau dan pra-skrining, bukan diagnosis. Perkembangan tiap anak punya rentang normal — misalnya mulai berjalan sendiri normalnya bisa terjadi antara 10–18 bulan (IDAI). Keputusan dan tindakan selanjutnya sepenuhnya tanggung jawab orang tua.</p>
           </div>
         </div>
+        <div class="wrap"><div id="vocab-card"></div></div>
       </section>
 
       <!-- PENDIDIKAN -->
@@ -1252,6 +1319,7 @@
           </div>
           <div class="act-grid" id="act-grid"></div>
         </div>
+        <div class="wrap"><div id="weekplan-card"></div></div>
       </section>
 
       <!-- PARENTING -->
@@ -1332,6 +1400,8 @@
             <div class="who-tile"><div class="big">Maks 1 jam</div><h4>Layar per hari (usia 2–4 th)</h4><p>Untuk usia 1 tahun, waktu layar tidak dianjurkan sama sekali; makin sedikit makin baik. <span class="badge badge-src">WHO 2019</span></p></div>
             <div class="who-tile"><div class="big">11–14 jam</div><h4>Tidur per hari (usia 1–2 th)</h4><p>Termasuk tidur siang. Untuk usia 3–4 tahun: 10–13 jam. <span class="badge badge-src">WHO 2019</span></p></div>
           </div>
+          <div id="daily-card"></div>
+          <div id="safety-card"></div>
         </div>
       </section>
 
@@ -1988,7 +2058,7 @@
     }
 
     /* ================= STATE (sesi ini saja) ================= */
-    var state = { nama:"", usiaBulan:18, titik:18, answers:{}, eduPhase:"a", eduDone:{}, meals:[], toilet:{} };
+    var state = { nama:"", usiaBulan:18, titik:18, answers:{}, eduPhase:"a", eduDone:{}, meals:[], toilet:{}, history:[], dailyLogs:[], vocab:[], moments:[], safety:{}, questions:"", children:null, activeChild:0 };
     AGE_POINTS.forEach(function(p){ state.answers[p]={}; });
     EDU.a.items.forEach(function(_,i){ state.eduDone["a"+i]=false; });
     EDU.b.items.forEach(function(_,i){ state.eduDone["b"+i]=false; });
@@ -2481,6 +2551,19 @@
         wsPr.mergeCells("A"+rp+":F"+rp);
         var nc=wsPr.getCell("A"+rp); nc.value=pr[pr.length-1][0]; nc.font=xFont({ italic:true, color:XC.muted }); nc.alignment={ wrapText:true, vertical:"top" };
         wsPr.getRow(rp).height=30;
+        rp+=2;
+        rp=xSectionRow(wsPr, rp, LANG==="en" ? "PART 3 — DAILY TRACKER: SCREEN, ACTIVITY & SLEEP (WHO 2019)" : "BAGIAN 3 — PENCATAT HARIAN: LAYAR, GERAK & TIDUR (WHO 2019)", 6);
+        var dailyAoa=[[LANG==="en"?"Date":"Tanggal", LANG==="en"?"Screen (min)":"Layar (menit)", LANG==="en"?"Active play (min)":"Gerak aktif (menit)", LANG==="en"?"Sleep (hrs)":"Tidur (jam)","",""]];
+        if(state.dailyLogs && state.dailyLogs.length) state.dailyLogs.forEach(function(l){ dailyAoa.push([l.date, l.screen, l.active, l.sleep, "", ""]); });
+        else dailyAoa.push([LANG==="en"?"(no daily entries yet)":"(belum ada catatan harian)","","","","",""]);
+        rp=xTable(wsPr, rp, dailyAoa, null);
+        rp++;
+        rp=xSectionRow(wsPr, rp, LANG==="en" ? "PART 4 — VOCABULARY LOG & MOMENTS JOURNAL" : "BAGIAN 4 — LOG KOSAKATA & JURNAL MOMEN", 6);
+        var vocAoa=[[LANG==="en"?"Date":"Tanggal", LANG==="en"?"Word / Moment":"Kata / Momen", LANG==="en"?"Note":"Catatan","","",""]];
+        if(state.vocab) state.vocab.forEach(function(v){ vocAoa.push([v.date, rawText(v.word), rawText(v.note), "", "", ""]); });
+        if(state.moments) state.moments.forEach(function(mo){ vocAoa.push([mo.date, rawText(mo.title), rawText(mo.note), "", "", ""]); });
+        if(vocAoa.length===1) vocAoa.push([LANG==="en"?"(no entries yet)":"(belum ada catatan)","","","","",""]);
+        rp=xTable(wsPr, rp, vocAoa, null);
         xSetup(wsPr, 3, 6);
         return wb.xlsx.writeBuffer().then(function(buf){
           var blob=new Blob([buf], { type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
@@ -2781,6 +2864,407 @@
       refreshIcons();
     }
 
+    /* ================= GELOMBANG A+B (v2.1) ================= */
+    var EN = (LANG==="en");
+    function T(id, en){ return EN ? en : id; }
+    function todayISO(){ var d=new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+    function fmtDate(iso){ if(!iso) return ""; var p=iso.split("-"); if(p.length!==3) return iso; var bln = EN ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] : ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"]; return p[2]+" "+(bln[parseInt(p[1],10)-1]||p[1])+" "+p[0]; }
+    function lockNoteHTML(){ return '<p class="lock-note complete-lock-note" hidden style="margin-bottom:12px"><i data-lucide="lock" class="icon"></i><span>'+T("Fitur ini bagian dari paket Complete. Paket Basic Anda tetap bisa memakai hasil terakhir dan Lembar Siap Konsultasi per kategori.","This feature is part of the Complete plan. Your Basic plan still includes the latest result and a per-category Appointment Sheet.")+'</span></p>'; }
+
+    /* ---------- B7: Profil multi-anak (maks 2, Complete) ---------- */
+    var CHILD_FIELDS = ["nama","usiaBulan","titik","answers","eduPhase","eduDone","meals","toilet","history","dailyLogs","vocab","moments","safety","questions"];
+    function captureChild(){
+      var o={}; CHILD_FIELDS.forEach(function(f){ o[f]=JSON.parse(JSON.stringify(state[f])); }); return o;
+    }
+    function blankChild(){
+      var o={ nama:"", usiaBulan:18, titik:18, answers:{}, eduPhase:"a", eduDone:{}, meals:[], toilet:{}, history:[], dailyLogs:[], vocab:[], moments:[], safety:{}, questions:"" };
+      AGE_POINTS.forEach(function(p){ o.answers[p]={}; });
+      EDU.a.items.forEach(function(_,i){ o.eduDone["a"+i]=false; });
+      EDU.b.items.forEach(function(_,i){ o.eduDone["b"+i]=false; });
+      TOILET.forEach(function(_,i){ o.toilet[i]=false; });
+      return o;
+    }
+    function ensureChildren(){
+      if(!Array.isArray(state.children) || !state.children.length){ state.children=[captureChild()]; state.activeChild=0; }
+      if(state.activeChild>=state.children.length) state.activeChild=0;
+    }
+    function storeActiveChild(){ ensureChildren(); state.children[state.activeChild]=captureChild(); }
+    window.__trStoreChild = storeActiveChild;
+    function loadChild(idx, silent){
+      ensureChildren();
+      if(!silent) storeActiveChild();
+      state.activeChild = Math.max(0, Math.min(idx, state.children.length-1));
+      var c = state.children[state.activeChild] || blankChild();
+      CHILD_FIELDS.forEach(function(f){ if(c[f]!==undefined) state[f]=JSON.parse(JSON.stringify(c[f])); });
+      AGE_POINTS.forEach(function(p){ if(!state.answers[p]) state.answers[p]={}; });
+      var fn=$("f-nama"); if(fn) fn.value=state.nama||"";
+      var fu=$("f-usia"); if(fu) fu.value=String(state.usiaBulan||18);
+      renderMilestones(); renderEduTabs(); renderActivities(); renderMeals(); renderToilet(); calcSleep(); renderChildBar(); updateDashboard();
+    }
+    window.__trLoadChild = loadChild;
+    function renderChildBar(){
+      var host=$("child-bar"); if(!host) return;
+      ensureChildren();
+      var html='<div class="child-pills" role="group" aria-label="'+T("Pilih anak","Choose child")+'">';
+      state.children.forEach(function(c,i){
+        var nm = c.nama ? esc(c.nama) : (T("Anak ","Child ")+(i+1));
+        html+='<button class="age-pill" type="button" data-child="'+i+'" aria-pressed="'+(i===state.activeChild?"true":"false")+'">'+nm+' · '+(c.usiaBulan||18)+(EN?" mo":" bln")+'</button>';
+      });
+      if(state.children.length<2){
+        html+='<span data-complete-only style="display:inline-flex">'+lockNoteHTML()+'<button class="age-pill" type="button" id="btn-add-child"><i data-lucide="plus" class="icon" style="width:16px;height:16px"></i>'+T("Tambah anak (maks 2)","Add child (max 2)")+'</button></span>';
+      }
+      html+='</div><p class="fineprint">'+T("Paket Complete bisa menyimpan profil 2 anak dalam satu akun — tiap anak punya jawaban, log, dan riwayatnya sendiri.","The Complete plan stores profiles for 2 children in one account — each child keeps their own answers, logs, and history.")+'</p>';
+      host.innerHTML=html;
+      host.querySelectorAll("[data-child]").forEach(function(b){ b.addEventListener("click", function(){ var i=parseInt(b.getAttribute("data-child"),10); if(i!==state.activeChild) loadChild(i); }); });
+      var add=$("btn-add-child");
+      if(add) add.addEventListener("click", function(){
+        storeActiveChild();
+        state.children.push(blankChild());
+        loadChild(state.children.length-1, true);
+        toast(T("Profil anak kedua ditambahkan. Isi nama & usianya di atas.","Second child profile added. Fill in their name & age above."));
+      });
+      refreshIcons();
+    }
+
+    /* ---------- A2: Tren antar-cek (Complete) ---------- */
+    function recordHistory(){
+      var items=MILESTONES[state.titik], ans=state.answers[state.titik]||{};
+      if(Object.keys(ans).length<items.length || !items.length) return;
+      var sudah=0, doms={};
+      items.forEach(function(it,i){
+        var lbl = EN ? it.d : (DOMAIN_LABEL[it.d]||it.d);
+        if(!doms[lbl]) doms[lbl]={s:0,t:0};
+        doms[lbl].t++; if(ans[i]==="Sudah"||ans[i]==="Yes"){ sudah++; doms[lbl].s++; }
+      });
+      var entry={ d:todayISO(), titik:state.titik, sudah:sudah, total:items.length, doms:doms };
+      if(!Array.isArray(state.history)) state.history=[];
+      var last=state.history[state.history.length-1];
+      if(last && last.d===entry.d && last.titik===entry.titik) state.history[state.history.length-1]=entry;
+      else {
+        if(last && last.titik===entry.titik && last.sudah===entry.sudah) return;
+        state.history.push(entry);
+      }
+      if(state.history.length>24) state.history=state.history.slice(-24);
+    }
+    function renderTrend(){
+      var host=$("trend-card"); if(!host) return;
+      var h=Array.isArray(state.history)?state.history:[];
+      var html='<div class="tool-card" data-complete-only>'+lockNoteHTML()
+        +'<div class="tool-head"><h3><i data-lucide="trending-up" class="icon"></i>'+T("Tren antar-cek","Progress over time")+'</h3><span class="badge badge-src">'+h.length+' '+T("cek tersimpan","checks saved")+'</span></div>'
+        +'<p style="color:var(--muted);margin:8px 0 0;font-size:.92rem">'+T("Setiap cek milestone yang lengkap tersimpan otomatis di sini. Yang ditampilkan hanya jumlah butir “Sudah” dari catatan Anda sendiri — tanpa garis patokan “normal”.","Every completed milestone check is saved here automatically. This shows only the “Yes” counts from your own notes — no “normal” benchmark line.")+'</p>';
+      if(!h.length){
+        html+='<p class="empty-note">'+T("Belum ada riwayat. Selesaikan satu cek milestone sampai semua butir terjawab — hasilnya tersimpan di sini dan bisa dibandingkan pada cek berikutnya.","No history yet. Finish one milestone check with every item answered — it will be saved here so you can compare it with the next check.")+'</p>';
+      } else {
+        var max=1; h.forEach(function(e){ if(e.total>max) max=e.total; });
+        var W=640, H=170, base=140, bw=Math.min(56, (W-40)/h.length-14);
+        var svg='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+T("Grafik batang jumlah butir Sudah per cek","Bar chart of Yes counts per check")+'">';
+        h.forEach(function(e,i){
+          var x=30+i*((W-50)/h.length)+6, bh=Math.round((e.sudah/max)*(base-30)), y=base-bh;
+          svg+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+bh+'" rx="5" style="fill:var(--brand)"></rect>'
+            +'<text x="'+(x+bw/2)+'" y="'+(y-6)+'" text-anchor="middle" font-size="13" font-weight="800" style="fill:var(--ink)">'+e.sudah+'/'+e.total+'</text>'
+            +'<text x="'+(x+bw/2)+'" y="'+(base+16)+'" text-anchor="middle" font-size="11" style="fill:var(--muted)">'+e.titik+(EN?"mo":"bln")+'</text>'
+            +'<text x="'+(x+bw/2)+'" y="'+(base+30)+'" text-anchor="middle" font-size="10" style="fill:var(--muted)">'+fmtDate(e.d)+'</text>';
+        });
+        svg+='<line x1="24" y1="'+base+'" x2="'+(W-10)+'" y2="'+base+'" style="stroke:var(--line)" stroke-width="2"/></svg>';
+        html+='<div class="chart-box">'+svg+'<p class="chart-cap">'+T("Jumlah butir “Sudah” per titik usia yang dicek. Titik usia berbeda berisi butir yang berbeda, jadi bandingkan juga rincian per ranah di bawah.","“Yes” count per checkpoint. Different checkpoints contain different items, so also compare the per-domain detail below.")+'</p></div>';
+        h.slice().reverse().forEach(function(e){
+          html+='<div class="trend-row"><b>'+fmtDate(e.d)+'</b><span class="badge badge-src">'+e.titik+(EN?" months":" bulan")+'</span><span>'+e.sudah+' '+T("dari","of")+' '+e.total+' '+T("butir “Sudah”","items “Yes”")+'</span></div>';
+          Object.keys(e.doms||{}).forEach(function(d){ var v=e.doms[d]; html+='<div class="trend-row" style="padding-left:14px"><span class="dom-name" style="min-width:9rem">'+esc(d)+'</span><span class="dom-count">'+v.s+' / '+v.t+'</span></div>'; });
+        });
+        if(h.length>=2){
+          var a=h[h.length-2], b=h[h.length-1];
+          html+='<p style="margin:12px 0 0;font-size:.93rem">'+T("Perbandingan dua cek terakhir: ","Comparing the last two checks: ")+fmtDate(a.d)+' ('+a.sudah+'/'+a.total+') → '+fmtDate(b.d)+' ('+b.sudah+'/'+b.total+').</p>';
+        }
+      }
+      html+='</div>';
+      host.innerHTML=html; refreshIcons();
+    }
+
+    /* ---------- A1 + A3: Lembar Siap Konsultasi & pengingat kalender ---------- */
+    function nextCheckpoint(){
+      var ups=AGE_POINTS.filter(function(p){ return p>state.titik; });
+      return ups.length?ups[0]:null;
+    }
+    function reminderDate(){
+      var nx=nextCheckpoint();
+      var months = nx ? Math.max(1, nx-(state.usiaBulan||state.titik)) : 3;
+      var d=new Date(); d.setMonth(d.getMonth()+months);
+      return { date:d, months:months, titik:nx||state.titik };
+    }
+    function icsDate(d){ return d.getFullYear()+String(d.getMonth()+1).padStart(2,"0")+String(d.getDate()).padStart(2,"0"); }
+    function downloadICS(){
+      var r=reminderDate();
+      var title=T("Cek milestone TumbuhRata — titik ","TumbuhRata milestone check — checkpoint ")+r.titik+(EN?" months":" bulan");
+      var desc=T("Ulangi cek milestone di TumbuhRata dan bandingkan hasilnya dengan cek sebelumnya di tab Hasil.","Re-run the milestone check in TumbuhRata and compare the result with your previous check in the Results tab.");
+      var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//TumbuhRata//ID","BEGIN:VEVENT","UID:"+Date.now()+"@tumbuhrata","DTSTAMP:"+icsDate(new Date())+"T090000","DTSTART:"+icsDate(r.date),"SUMMARY:"+title,"DESCRIPTION:"+desc,"BEGIN:VALARM","TRIGGER:-PT9H","ACTION:DISPLAY","DESCRIPTION:"+title,"END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
+      var blob=new Blob([ics],{type:"text/calendar;charset=utf-8"});
+      var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="tumbuhrata-cek-ulang-"+icsDate(r.date)+".ics"; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); },3000);
+      toast(T("File kalender terunduh — buka file-nya untuk menyimpan pengingat.","Calendar file downloaded — open it to save the reminder."));
+    }
+    function gcalURL(){
+      var r=reminderDate();
+      var title=T("Cek milestone TumbuhRata — titik ","TumbuhRata milestone check — checkpoint ")+r.titik+(EN?" months":" bulan");
+      return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(title)+"&dates="+icsDate(r.date)+"/"+icsDate(r.date)+"&details="+encodeURIComponent(T("Ulangi cek milestone di TumbuhRata.","Re-run the milestone check in TumbuhRata."));
+    }
+    function renderConsult(){
+      var host=$("consult-card"); if(!host) return;
+      var tier=window.__trTier||"complete", cat=window.__trCategory||null;
+      var basicAreaOnly = (tier==="basic");
+      var items=MILESTONES[state.titik], ans=state.answers[state.titik]||{};
+      var belum=[], unsure=[];
+      items.forEach(function(it,i){ if(ans[i]==="Belum"||ans[i]==="Not yet") belum.push(it); else if(ans[i]==="Not sure") unsure.push(it); });
+      var nama=state.nama?esc(state.nama):T("si kecil","your child");
+      var sheet='<div class="consult-sheet" id="consult-sheet">'
+        +'<h4>'+T("Lembar Siap Konsultasi — ","Appointment Sheet — ")+nama+'</h4>'
+        +'<p style="margin:0;font-size:.9rem;color:var(--muted)">'+T("Tanggal: ","Date: ")+fmtDate(todayISO())+' · '+T("Usia: ","Age: ")+(state.usiaBulan||"")+(EN?" months":" bulan")+' · '+T("Titik cek: ","Checkpoint: ")+state.titik+(EN?" months":" bulan")+'</p>';
+      if(!basicAreaOnly || cat==="kembang" || !cat){
+        sheet+='<h4>'+T("Yang saya amati di rumah","What I have noticed at home")+'</h4>';
+        if(belum.length){ sheet+='<p style="margin:4px 0 0;font-size:.93rem"><b>'+T("Butir yang belum tampak","Items not yet seen")+'</b></p><ul>'; belum.forEach(function(it){ sheet+='<li>'+esc(it.t)+' — '+esc(EN?it.d:(DOMAIN_LABEL[it.d]||it.d))+'</li>'; }); sheet+='</ul>'; }
+        if(unsure.length){ sheet+='<p style="margin:8px 0 0;font-size:.93rem"><b>'+T("Butir yang masih ragu-ragu","Items I am unsure about")+'</b></p><ul>'; unsure.forEach(function(it){ sheet+='<li>'+esc(it.t)+' — '+esc(EN?it.d:(DOMAIN_LABEL[it.d]||it.d))+'</li>'; }); sheet+='</ul>'; }
+        if(!belum.length && !unsure.length) sheet+='<p style="margin:4px 0 0;font-size:.93rem">'+T("Belum ada butir “Belum” yang tercatat pada titik cek ini — lengkapi cek milestone di tab Tumbuh Kembang agar lembar ini terisi.","No “Not yet” items recorded at this checkpoint yet — complete the milestone check in the Milestones tab to fill this sheet.")+'</p>';
+      }
+      sheet+='<h4>'+T("Yang ingin saya tanyakan","What I want to ask")+'</h4>';
+      var qs=(state.questions||"").split("\n").filter(function(x){ return x.trim(); });
+      if(qs.length){ qs.forEach(function(q){ sheet+='<p class="q-lines">'+esc(q)+'</p>'; }); }
+      else { for(var qi=0;qi<3;qi++) sheet+='<p class="q-lines">&nbsp;</p>'; }
+      sheet+='<p style="margin:12px 0 0;font-size:.82rem;color:var(--muted)">'+T("Lembar ini berisi catatan pengamatan orang tua untuk dibawa ke dokter anak / Posyandu / Puskesmas. Bukan hasil diagnosis.","This sheet contains a parent's own observation notes to bring to a pediatrician / community health post. It is not a diagnosis.")+'</p></div>';
+      var r=reminderDate();
+      host.innerHTML='<div class="tool-card"><div class="tool-head"><h3><i data-lucide="stethoscope" class="icon"></i>'+T("Lembar Siap Konsultasi","Appointment Sheet")+'</h3><span class="badge badge-src">'+(basicAreaOnly?T("Versi per kategori (Basic)","Per-category version (Basic)"):T("Versi gabungan (Complete)","Combined version (Complete)"))+'</span></div>'
+        +'<p style="color:var(--muted);margin:8px 0 0;font-size:.92rem">'+T("Satu halaman berisi yang Anda amati dan yang ingin Anda tanyakan — tanpa kesimpulan atau diagnosis. Cetak atau simpan sebagai PDF, lalu bawa saat kontrol.","One page with what you noticed and what you want to ask — no conclusions or diagnosis. Print it or save it as a PDF and bring it to your appointment.")+'</p>'
+        +sheet
+        +'<div class="no-print" style="margin-top:16px"><label class="f" for="f-questions">'+T("Yang ingin saya tanyakan (satu pertanyaan per baris)","What I want to ask (one question per line)")+'</label>'
+        +'<textarea class="input" id="f-questions" placeholder="'+T("mis. Perlukah skrining lanjutan untuk bicara anak saya?","e.g. Should we do a follow-up screening for my child's speech?")+'">'+esc(state.questions||"")+'</textarea></div>'
+        +'<p class="fineprint no-print" style="margin-top:14px">'+T("Untuk mencetak lembar ini atau menyimpannya sebagai PDF: buka halaman ini di browser, lalu gunakan menu Cetak browser (Ctrl/Cmd+P) dari tab Hasil — tampilan cetaknya sudah disiapkan khusus untuk lembar ini.","To print this sheet or save it as a PDF: open this page in your browser and use the browser's Print menu (Ctrl/Cmd+P) from the Results tab — the print layout is prepared for this sheet.")+'</p>'
+        +'<div class="no-print" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">'
+        +'<button class="btn btn-ghost" type="button" id="btn-ics"><i data-lucide="calendar-plus" class="icon"></i>'+T("Ingatkan cek lagi (±","Remind me to re-check (±")+r.months+(EN?" mo) — .ics":" bln) — .ics")+'</button>'
+        +'<a class="btn btn-ghost" href="'+gcalURL()+'" target="_blank" rel="noopener"><i data-lucide="calendar" class="icon"></i>Google Calendar</a></div>'
+        +'<p class="fineprint no-print">'+T("Pengingat menunjuk titik cek berikutnya (","The reminder points to the next checkpoint (")+r.titik+(EN?" months":" bulan")+T(") sekitar ","), around ")+fmtDate(r.date.getFullYear()+"-"+String(r.date.getMonth()+1).padStart(2,"0")+"-"+String(r.date.getDate()).padStart(2,"0"))+T(", dihitung dari usia anak saat ini."," from now, calculated from your child's current age.")+'</p></div>';
+      var q=$("f-questions");
+      if(q) q.addEventListener("input", function(){ state.questions=q.value; if(window.__trScheduleSync) window.__trScheduleSync(); renderConsultSheetOnly(); });
+      var bi=$("btn-ics"); if(bi) bi.addEventListener("click", downloadICS);
+      refreshIcons();
+    }
+    function renderConsultSheetOnly(){ /* lembar diperbarui penuh saat tab Hasil dirender ulang */ }
+
+    /* ---------- A4: Pencatat harian layar/aktivitas/tidur + grafik mingguan (Complete, Parenting) ---------- */
+    function whoGuide(){
+      var age=state.usiaBulan||18;
+      if(age<24) return { screenMax:0, screenTxt:T("tidak dianjurkan (usia 1 tahun)","not recommended (age 1)"), sleepMin:11, sleepMax:14, activeMin:180 };
+      if(age<36) return { screenMax:60, screenTxt:T("maks 1 jam (usia 2 tahun)","max 1 hour (age 2)"), sleepMin:11, sleepMax:14, activeMin:180 };
+      return { screenMax:60, screenTxt:T("maks 1 jam (usia 3–4 tahun)","max 1 hour (ages 3–4)"), sleepMin:10, sleepMax:13, activeMin:180 };
+    }
+    function guideStatus(kind, val){
+      var g=whoGuide();
+      if(kind==="screen") return val<=g.screenMax ? T("di dalam rentang pedoman","within the guideline range") : T("di luar rentang pedoman","outside the guideline range");
+      if(kind==="active") return val>=g.activeMin ? T("di dalam rentang pedoman","within the guideline range") : T("di bawah rentang pedoman","below the guideline range");
+      return (val>=g.sleepMin && val<=g.sleepMax) ? T("di dalam rentang pedoman","within the guideline range") : T("di luar rentang pedoman","outside the guideline range");
+    }
+    function miniChart(logs, key, maxVal, guideVal, unit){
+      var W=640, H=120, base=92;
+      var svg='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="weekly chart">';
+      if(guideVal!==null && guideVal!==undefined){
+        var gy=base-Math.round((guideVal/maxVal)*(base-16));
+        svg+='<line x1="26" y1="'+gy+'" x2="'+(W-8)+'" y2="'+gy+'" style="stroke:var(--sun)" stroke-width="2" stroke-dasharray="6 4"></line><text x="'+(W-10)+'" y="'+(gy-5)+'" text-anchor="end" font-size="11" font-weight="700" style="fill:var(--muted)">'+T("pedoman ","guideline ")+guideVal+' '+unit+'</text>';
+      }
+      var n=Math.max(logs.length,1), step=(W-50)/7;
+      logs.forEach(function(l,i){
+        var v=parseFloat(l[key])||0, bh=Math.max(3, Math.round((v/maxVal)*(base-16))), bw=Math.min(52, step-16), x=32+i*step+4, y=base-bh;
+        svg+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+bh+'" rx="5" style="fill:var(--brand)"></rect>'
+          +'<text x="'+(x+bw/2)+'" y="'+(y-5)+'" text-anchor="middle" font-size="12" font-weight="800" style="fill:var(--ink)">'+v+'</text>'
+          +'<text x="'+(x+bw/2)+'" y="'+(base+15)+'" text-anchor="middle" font-size="10" style="fill:var(--muted)">'+(l.date||"").slice(5)+'</text>';
+      });
+      svg+='<line x1="24" y1="'+base+'" x2="'+(W-8)+'" y2="'+base+'" style="stroke:var(--line)" stroke-width="2"/></svg>';
+      return svg;
+    }
+    function renderDaily(){
+      var host=$("daily-card"); if(!host) return;
+      if(!Array.isArray(state.dailyLogs)) state.dailyLogs=[];
+      var logs=state.dailyLogs.slice(-7), g=whoGuide();
+      var html='<div class="tool-card" data-complete-only style="margin-top:20px">'+lockNoteHTML()
+        +'<div class="tool-head"><h3><i data-lucide="activity" class="icon"></i>'+T("Pencatat Harian: Layar, Gerak & Tidur","Daily Tracker: Screen, Activity & Sleep")+'</h3><span class="badge badge-resmi">WHO 2019</span></div>'
+        +'<p style="color:var(--muted);margin:8px 0 0;font-size:.92rem">'+T("Catat per hari, lalu lihat 7 catatan terakhir sebagai grafik batang. Statusnya hanya “di dalam / di luar rentang pedoman” WHO 2019 — bukan penilaian anak Anda bermasalah atau tidak.","Log each day and see the last 7 entries as bar charts. Status only says “within / outside the WHO 2019 guideline range” — it is not a judgment that anything is wrong with your child.")+'</p>'
+        +'<form id="daily-form" style="margin-top:14px"><div class="form-grid two">'
+        +'<div><label class="f" for="d-screen">'+T("Layar (menit/hari)","Screen time (min/day)")+'</label><input class="input" id="d-screen" type="number" min="0" max="1440" placeholder="'+T("mis. 30","e.g. 30")+'" /></div>'
+        +'<div><label class="f" for="d-active">'+T("Gerak aktif (menit/hari)","Active play (min/day)")+'</label><input class="input" id="d-active" type="number" min="0" max="1440" placeholder="'+T("mis. 150","e.g. 150")+'" /></div>'
+        +'<div><label class="f" for="d-sleep">'+T("Tidur total (jam/hari, termasuk siang)","Total sleep (hrs/day, incl. naps)")+'</label><input class="input" id="d-sleep" type="number" min="0" max="24" step="0.5" placeholder="'+T("mis. 11,5","e.g. 11.5")+'" /></div>'
+        +'<div><label class="f" for="d-date">'+T("Tanggal","Date")+'</label><input class="input" id="d-date" type="date" value="'+todayISO()+'" /></div>'
+        +'</div><button class="btn btn-brand" type="submit" style="margin-top:12px"><i data-lucide="plus" class="icon"></i>'+T("Simpan catatan hari ini","Save today's entry")+'</button></form>';
+      if(logs.length){
+        var last=logs[logs.length-1];
+        html+='<div class="calc-out">'+T("Catatan terakhir ","Latest entry ")+'('+fmtDate(last.date)+'): '+T("layar ","screen ")+last.screen+' '+T("mnt — ","min — ")+guideStatus("screen", parseFloat(last.screen)||0)+'; '+T("gerak ","active ")+last.active+' '+T("mnt — ","min — ")+guideStatus("active", parseFloat(last.active)||0)+'; '+T("tidur ","sleep ")+last.sleep+' '+T("jam — ","hrs — ")+guideStatus("sleep", parseFloat(last.sleep)||0)+'.</div>';
+        html+='<div class="chart-box"><b style="font-family:Nunito,sans-serif">'+T("Layar (menit) — pedoman: ","Screen (minutes) — guideline: ")+g.screenTxt+'</b>'+miniChart(logs,"screen",240,g.screenMax,T("mnt","min"))+'</div>';
+        html+='<div class="chart-box"><b style="font-family:Nunito,sans-serif">'+T("Gerak aktif (menit) — pedoman: minimal 180 menit","Active play (minutes) — guideline: at least 180 minutes")+'</b>'+miniChart(logs,"active",360,180,T("mnt","min"))+'</div>';
+        html+='<div class="chart-box"><b style="font-family:Nunito,sans-serif">'+T("Tidur (jam) — pedoman: ","Sleep (hours) — guideline: ")+g.sleepMin+'–'+g.sleepMax+T(" jam"," hrs")+'</b>'+miniChart(logs,"sleep",16,g.sleepMax,T("jam","hrs"))+'</div>';
+        html+='<table class="log"><thead><tr><th>'+T("Tanggal","Date")+'</th><th>'+T("Layar","Screen")+'</th><th>'+T("Gerak","Active")+'</th><th>'+T("Tidur","Sleep")+'</th><th></th></tr></thead><tbody>';
+        logs.slice().reverse().forEach(function(l){
+          var gi=state.dailyLogs.indexOf(l);
+          html+='<tr><td>'+fmtDate(l.date)+'</td><td>'+l.screen+' '+T("mnt","min")+'</td><td>'+l.active+' '+T("mnt","min")+'</td><td>'+l.sleep+' '+T("jam","hrs")+'</td><td><button class="try-btn" type="button" data-del-daily="'+gi+'">'+T("Hapus","Delete")+'</button></td></tr>';
+        });
+        html+='</tbody></table>';
+      } else {
+        html+='<p class="empty-note">'+T("Belum ada catatan harian. Isi formulir di atas untuk mulai melihat pola mingguan anak.","No daily entries yet. Fill in the form above to start seeing your child's weekly pattern.")+'</p>';
+      }
+      html+='<p class="fineprint">'+T("Acuan: WHO 2019 — layar tidak dianjurkan untuk usia 1 tahun dan maks 1 jam untuk usia 2 tahun ke atas; gerak aktif minimal 180 menit/hari untuk usia 1–4 tahun; tidur 11–14 jam (1–2 th) / 10–13 jam (3–4 th), termasuk tidur siang; jangan batasi gerak anak lebih dari 1 jam sekali.","Reference: WHO 2019 — screen time not recommended at age 1 and max 1 hour from age 2; at least 180 minutes of active play per day for ages 1–4; sleep 11–14 hrs (ages 1–2) / 10–13 hrs (ages 3–4) including naps; don't restrain movement for more than 1 hour at a time.")+'</p></div>';
+      host.innerHTML=html;
+      var f=$("daily-form");
+      if(f) f.addEventListener("submit", function(e){
+        e.preventDefault();
+        if($("d-screen").value==="" && $("d-active").value==="" && $("d-sleep").value===""){ toast(T("Isi dulu minimal satu angka (layar, gerak, atau tidur) sebelum menyimpan.","Fill in at least one number (screen, activity, or sleep) before saving.")); return; }
+        var entry={ date:($("d-date").value||todayISO()), screen:parseFloat($("d-screen").value)||0, active:parseFloat($("d-active").value)||0, sleep:parseFloat($("d-sleep").value)||0 };
+        var ex=-1; state.dailyLogs.forEach(function(l,i){ if(l.date===entry.date) ex=i; });
+        if(ex>=0) state.dailyLogs[ex]=entry; else state.dailyLogs.push(entry);
+        state.dailyLogs.sort(function(a,b){ return a.date<b.date?-1:1; });
+        if(state.dailyLogs.length>60) state.dailyLogs=state.dailyLogs.slice(-60);
+        renderDaily(); if(window.__trScheduleSync) window.__trScheduleSync();
+        toast(T("Catatan harian tersimpan.","Daily entry saved."));
+      });
+      host.querySelectorAll("[data-del-daily]").forEach(function(b){ b.addEventListener("click", function(){ state.dailyLogs.splice(parseInt(b.getAttribute("data-del-daily"),10),1); renderDaily(); if(window.__trScheduleSync) window.__trScheduleSync(); }); });
+      refreshIcons();
+    }
+
+    /* ---------- A5: Log kosakata + jurnal momen (Complete) ---------- */
+    function renderVocab(){
+      var host=$("vocab-card"); if(!host) return;
+      if(!Array.isArray(state.vocab)) state.vocab=[];
+      if(!Array.isArray(state.moments)) state.moments=[];
+      var items=MILESTONES[state.titik];
+      var langItems=items.filter(function(it){ return it.d==="Bahasa"||it.d==="Language/Communication"; });
+      var html='<div class="tool-card" data-complete-only>'+lockNoteHTML()
+        +'<div class="tool-head"><h3><i data-lucide="book-open" class="icon"></i>'+T("Log Kosakata & Jurnal Momen","Vocabulary Log & Moments Journal")+'</h3></div>'
+        +'<p style="color:var(--muted);margin:8px 0 0;font-size:.92rem">'+T("Catat kata baru dan momen “pertama kali” anak — teks saja. Tidak ada target jumlah kata “normal” di sini; daftar ini berguna sebagai catatan Anda sendiri dan bisa dibawa saat konsultasi.","Record new words and “first time” moments — text only. There is no “normal” word-count target here; this list is your own record and can be brought to appointments.")+'</p>';
+      if(langItems.length){
+        html+='<details class="learn"><summary>'+T("Butir bahasa pada titik cek ini (rujukan saja)","Language items at this checkpoint (reference only)")+'</summary><ul class="compact-list">';
+        langItems.forEach(function(it){ html+='<li>'+esc(it.t)+' <span class="badge badge-src">'+esc(it.s)+'</span></li>'; });
+        html+='</ul></details>';
+      }
+      html+='<form id="vocab-form" style="margin-top:12px"><div class="form-grid two">'
+        +'<div><label class="f" for="v-word">'+T("Kata baru","New word")+'</label><input class="input" id="v-word" type="text" maxlength="40" placeholder="'+T("mis. “minta”","e.g. “more”")+'" /></div>'
+        +'<div><label class="f" for="v-note">'+T("Konteks (opsional)","Context (optional)")+'</label><input class="input" id="v-note" type="text" maxlength="80" placeholder="'+T("mis. saat minta susu","e.g. asking for milk")+'" /></div>'
+        +'</div><button class="btn btn-brand" type="submit" style="margin-top:12px"><i data-lucide="plus" class="icon"></i>'+T("Tambah kata","Add word")+'</button></form>';
+      if(state.vocab.length){
+        html+='<p style="margin:14px 0 0"><b>'+state.vocab.length+'</b> '+T("kata tercatat (tanpa target — tiap anak bertambah dengan ritmenya sendiri).","words logged (no target — every child adds words at their own pace).")+'</p>';
+        state.vocab.slice().reverse().forEach(function(v){
+          var gi=state.vocab.indexOf(v);
+          html+='<div class="vocab-row"><div style="flex:1"><b>'+esc(v.word)+'</b>'+(v.note?' — <span style="color:var(--muted)">'+esc(v.note)+'</span>':'')+'<br><span style="font-size:.8rem;color:var(--muted)">'+fmtDate(v.date)+'</span></div><button class="try-btn" type="button" data-del-vocab="'+gi+'">'+T("Hapus","Delete")+'</button></div>';
+        });
+      } else html+='<p class="empty-note">'+T("Belum ada kata tercatat.","No words logged yet.")+'</p>';
+      html+='<form id="moment-form" style="margin-top:18px"><div class="form-grid two">'
+        +'<div><label class="f" for="mo-title">'+T("Momen pertama / berkesan","First / memorable moment")+'</label><input class="input" id="mo-title" type="text" maxlength="60" placeholder="'+T("mis. pertama kali melambaikan tangan","e.g. waved bye-bye for the first time")+'" /></div>'
+        +'<div><label class="f" for="mo-note">'+T("Catatan (opsional)","Note (optional)")+'</label><input class="input" id="mo-note" type="text" maxlength="100" placeholder="'+T("mis. di rumah nenek","e.g. at grandma's house")+'" /></div>'
+        +'</div><button class="btn btn-ghost" type="submit" style="margin-top:12px"><i data-lucide="plus" class="icon"></i>'+T("Tambah momen","Add moment")+'</button></form>';
+      if(state.moments.length){
+        state.moments.slice().reverse().forEach(function(mo){
+          var gi=state.moments.indexOf(mo);
+          html+='<div class="vocab-row"><div style="flex:1"><b>'+esc(mo.title)+'</b>'+(mo.note?' — <span style="color:var(--muted)">'+esc(mo.note)+'</span>':'')+'<br><span style="font-size:.8rem;color:var(--muted)">'+fmtDate(mo.date)+'</span></div><button class="try-btn" type="button" data-del-moment="'+gi+'">'+T("Hapus","Delete")+'</button></div>';
+        });
+      }
+      html+='</div>';
+      host.innerHTML=html;
+      var vf=$("vocab-form");
+      if(vf) vf.addEventListener("submit", function(e){ e.preventDefault(); var w=$("v-word").value.trim(); if(!w){ toast(T("Tulis kata barunya dulu ya.","Type the new word first.")); return; } state.vocab.push({ word:esc(w), note:esc($("v-note").value.trim()), date:todayISO() }); renderVocab(); if(window.__trScheduleSync) window.__trScheduleSync(); });
+      var mf=$("moment-form");
+      if(mf) mf.addEventListener("submit", function(e){ e.preventDefault(); var t2=$("mo-title").value.trim(); if(!t2){ toast(T("Tulis momennya dulu ya.","Type the moment first.")); return; } state.moments.push({ title:esc(t2), note:esc($("mo-note").value.trim()), date:todayISO() }); renderVocab(); if(window.__trScheduleSync) window.__trScheduleSync(); });
+      host.querySelectorAll("[data-del-vocab]").forEach(function(b){ b.addEventListener("click", function(){ state.vocab.splice(parseInt(b.getAttribute("data-del-vocab"),10),1); renderVocab(); if(window.__trScheduleSync) window.__trScheduleSync(); }); });
+      host.querySelectorAll("[data-del-moment]").forEach(function(b){ b.addEventListener("click", function(){ state.moments.splice(parseInt(b.getAttribute("data-del-moment"),10),1); renderVocab(); if(window.__trScheduleSync) window.__trScheduleSync(); }); });
+      refreshIcons();
+    }
+
+    /* ---------- B8: Checklist keamanan rumah balita (AAP) ---------- */
+    var SAFETY = EN ? [
+      "Install safety gates at the top and bottom of stairs",
+      "Set the water heater to 120°F (49°C) or lower to prevent scalds",
+      "Lock medicines, vitamins, and cleaning products up and out of reach",
+      "Keep small objects — coins, button batteries, balloons, magnets — out of reach (choking hazards)",
+      "Never leave your child alone in the bathtub or near any water, even for a moment",
+      "Install smoke and carbon monoxide alarms and test them monthly",
+      "Anchor dressers, bookcases, and TVs to the wall to prevent tip-overs",
+      "Use cordless window coverings, or keep cords tied up and out of reach; install window guards",
+      "Cover unused electrical outlets and keep cords out of reach",
+      "Keep plastic bags, sharp objects, and hot liquids out of reach",
+      "Keep your child in a rear-facing car seat as long as the seat's limits allow",
+      "If you have a pool, surround it with a four-sided fence with a self-latching gate"
+    ] : [
+      "Pasang gerbang pengaman di bagian atas dan bawah tangga",
+      "Atur suhu pemanas air maksimal 49°C (120°F) untuk mencegah luka bakar",
+      "Simpan obat, vitamin, dan bahan pembersih terkunci dan jauh dari jangkauan anak",
+      "Jauhkan benda kecil — koin, baterai kancing, balon, magnet — dari jangkauan anak (risiko tersedak)",
+      "Jangan pernah meninggalkan anak sendirian di bak mandi atau di dekat air, walau sebentar",
+      "Pasang alarm asap dan karbon monoksida, dan uji setiap bulan",
+      "Kencangkan lemari, rak buku, dan TV ke dinding agar tidak roboh menimpa anak",
+      "Gunakan penutup jendela tanpa tali, atau ikat tali gorden jauh dari jangkauan; pasang pengaman jendela",
+      "Tutup stopkontak yang tidak dipakai dan jauhkan kabel dari jangkauan anak",
+      "Jauhkan kantong plastik, benda tajam, dan cairan panas dari jangkauan anak",
+      "Gunakan kursi mobil anak menghadap belakang selama batas kursi mengizinkan",
+      "Bila ada kolam, kelilingi dengan pagar empat sisi berpintu yang menutup sendiri"
+    ];
+    function renderSafety(){
+      var host=$("safety-card"); if(!host) return;
+      if(!state.safety || typeof state.safety!=="object") state.safety={};
+      var done=0; SAFETY.forEach(function(_,i){ if(state.safety[i]) done++; });
+      var html='<div class="tool-card" style="margin-top:20px"><div class="tool-head"><h3><i data-lucide="shield-check" class="icon"></i>'+T("Checklist Keamanan Rumah Balita","Toddler Home-Safety Checklist")+'</h3><span class="badge badge-src">'+done+' / '+SAFETY.length+'</span></div>'
+        +'<p style="color:var(--muted);margin:8px 0 0;font-size:.92rem">'+T("Daftar kesadaran untuk memeriksa rumah dari sudut pandang anak yang mulai memanjat dan mengeksplorasi — dirangkum dari panduan AAP di HealthyChildren.org. Ini bukan jaminan keamanan; pengawasan orang dewasa tetap yang utama.","An awareness list for checking your home from the viewpoint of a climbing, exploring toddler — summarized from AAP guidance on HealthyChildren.org. This is not a safety guarantee; adult supervision still matters most.")+'</p>'
+        +'<p style="margin:8px 0 0"><span class="badge badge-resmi">'+T("Panduan resmi · AAP HealthyChildren.org","Official guidance · AAP HealthyChildren.org")+'</span></p><div style="margin-top:8px">';
+      SAFETY.forEach(function(t,i){
+        html+='<div class="check-row"><div style="flex:1">'+esc(t)+'</div><button class="try-btn'+(state.safety[i]?" done":"")+'" type="button" data-safety="'+i+'">'+(state.safety[i]?T("Sudah ✓","Done ✓"):T("Belum","Not yet"))+'</button></div>';
+      });
+      html+='</div><p class="disclaimer">'+T("Checklist ini membantu Anda memperhatikan bahaya umum di rumah, bukan jaminan bahwa rumah sepenuhnya aman. Keputusan dan pengawasan tetap tanggung jawab orang tua.","This checklist helps you notice common household hazards; it is not a guarantee that a home is completely safe. Decisions and supervision remain the parents' responsibility.")+'</p></div>';
+      host.innerHTML=html;
+      host.querySelectorAll("[data-safety]").forEach(function(b){ b.addEventListener("click", function(){ var i=parseInt(b.getAttribute("data-safety"),10); state.safety[i]=!state.safety[i]; renderSafety(); if(window.__trScheduleSync) window.__trScheduleSync(); }); });
+      refreshIcons();
+    }
+
+    /* ---------- B6: Kartu aktivitas cetak + rencana main 4 minggu ---------- */
+    function renderWeekPlan(){
+      var host=$("weekplan-card"); if(!host) return;
+      var tier=window.__trTier||"complete";
+      var phases = (tier==="basic") ? [state.eduPhase] : ["a","b"];
+      var html='<div class="tool-card"><div class="tool-head"><h3><i data-lucide="printer" class="icon"></i>'+T("Kartu Aktivitas Cetak & Rencana Main 4 Minggu","Printable Activity Cards & 4-Week Play Plan")+'</h3></div>'
+        +'<p style="color:var(--muted);margin:8px 0 0;font-size:.92rem">'+T("16 aktivitas yang sama seperti di atas, dikemas sebagai kartu yang bisa dicetak dan ditempel di kulkas — plus rencana main 4 minggu agar Anda tidak perlu memilih ide setiap hari.","The same 16 activities above, packaged as printable cards for the fridge — plus a 4-week play plan so you don't have to pick an idea every day.")+'</p>'
+        +'<p class="fineprint no-print" style="margin-top:12px">'+T("Untuk mencetak kartu ini: buka halaman ini di browser, lalu gunakan menu Cetak browser (Ctrl/Cmd+P) dari tab Pendidikan — tampilan cetaknya sudah disiapkan untuk kartu-kartu ini.","To print these cards: open this page in your browser and use the browser's Print menu (Ctrl/Cmd+P) from the Learning tab — the print layout is prepared for these cards.")+'</p>'
+        +'<div id="print-cards-area">';
+      phases.forEach(function(ph){
+        html+='<h4 style="font-family:Nunito,sans-serif;margin:18px 0 4px">'+esc(EDU[ph].label)+'</h4><div class="print-cards">';
+        EDU[ph].items.forEach(function(it,i){
+          html+='<div class="print-card"><h5>'+(i+1)+'. '+esc(it.t)+'</h5><p>'+esc(it.d)+'</p><p class="alat">'+T("Alat: ","You need: ")+esc(it.alat)+'</p></div>';
+        });
+        html+='</div>';
+      });
+      html+='</div>';
+      if(tier!=="basic"){
+        var all=[]; ["a","b"].forEach(function(ph){ EDU[ph].items.forEach(function(it){ all.push({ ph:ph, t:it.t }); }); });
+        html+='<div data-complete-only>'+lockNoteHTML()+'<h4 style="font-family:Nunito,sans-serif;margin:20px 0 4px">'+T("Rencana main 4 minggu","4-week play plan")+'</h4>'
+          +'<p style="color:var(--muted);font-size:.92rem;margin:4px 0 0">'+T("Lima hari bermain per minggu, 5–10 menit saja, bergantian dari kedua fase usia. Sesuaikan dengan fase anak Anda — rencana ini panduan ide, bukan jadwal kaku.","Five play days per week, just 5–10 minutes, alternating across both age bands. Match it to your child's band — this is an idea guide, not a rigid schedule.")+'</p>'
+          +'<table class="week-plan"><thead><tr><th>'+T("Minggu","Week")+'</th><th>'+T("Hari 1","Day 1")+'</th><th>'+T("Hari 2","Day 2")+'</th><th>'+T("Hari 3","Day 3")+'</th><th>'+T("Hari 4","Day 4")+'</th><th>'+T("Hari 5","Day 5")+'</th></tr></thead><tbody>';
+        for(var w=0; w<4; w++){
+          html+='<tr><td><b>'+T("Minggu ","Week ")+(w+1)+'</b></td>';
+          for(var d2=0; d2<5; d2++){ var a=all[(w*5+d2)%all.length]; html+='<td>'+esc(a.t)+'</td>'; }
+          html+='</tr>';
+        }
+        html+='</tbody></table></div>';
+      } else {
+        html+='<p class="fineprint">'+T("Paket Complete membuka kartu kedua fase usia sekaligus + rencana main 4 minggu.","The Complete plan unlocks both age bands' cards plus the 4-week play plan.")+'</p>';
+      }
+      html+='</div>';
+      host.innerHTML=html;
+      refreshIcons();
+    }
+
+    /* ---------- Render semua fitur baru ---------- */
+    function renderNewTools(){
+      recordHistory();
+      renderChildBar(); renderTrend(); renderConsult(); renderDaily(); renderVocab(); renderSafety(); renderWeekPlan();
+      if(window.__trTier){
+        document.querySelectorAll("[data-complete-only]").forEach(function(el){
+          var locked = window.__trTier === "basic";
+          el.classList.toggle("complete-locked", locked);
+          el.querySelectorAll(".complete-lock-note").forEach(function(n){ n.hidden = !locked; });
+        });
+      }
+    }
+    var __origUpdateDashboard = updateDashboard;
+    updateDashboard = function(){ __origUpdateDashboard(); renderNewTools(); };
+
     /* ================= INIT ================= */
     if(LANG==="en"){ var li0=$("landing"); if(li0) li0.hidden=true; var le0=$("landing-en"); if(le0) le0.hidden=false; }
     applyI18n(); applyGateEn();
@@ -2865,7 +3349,7 @@
         });
       });
       function writeCache(){ try { localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); } catch(e){} }
-      function snapshot(){ return JSON.parse(JSON.stringify(state)); }
+      function snapshot(){ if(window.__trStoreChild) window.__trStoreChild(); return JSON.parse(JSON.stringify(state)); }
 
       function applyProgress(p){
         if(!p) return;
@@ -2880,6 +3364,13 @@
           if(p.eduDone) state.eduDone = p.eduDone;
           if(p.meals) state.meals = p.meals;
           if(p.toilet) state.toilet = p.toilet;
+          if(p.history) state.history = p.history;
+          if(p.dailyLogs) state.dailyLogs = p.dailyLogs;
+          if(p.vocab) state.vocab = p.vocab;
+          if(p.moments) state.moments = p.moments;
+          if(p.safety) state.safety = p.safety;
+          if(p.questions) state.questions = p.questions;
+          if(p.children && p.children.length){ state.children = p.children; state.activeChild = p.activeChild || 0; if(window.__trLoadChild) window.__trLoadChild(state.activeChild, true); }
           $("f-nama").value = state.nama;
           $("f-usia").value = String(state.usiaBulan);
           renderMilestones(); renderEduTabs(); renderActivities(); renderMeals(); renderToilet(); calcSleep(); updateDashboard();
@@ -2943,6 +3434,13 @@
             }
             if(!locked && lk) lk.remove();
           }
+        });
+        /* v2.1: fitur Complete-only + paparan tier untuk render gabungan/per-kategori */
+        window.__trTier = seat.tier; window.__trCategory = seat.category || null;
+        document.querySelectorAll("[data-complete-only]").forEach(function(el){
+          var locked = seat.tier === "basic";
+          el.classList.toggle("complete-locked", locked);
+          el.querySelectorAll(".complete-lock-note").forEach(function(n){ n.hidden = !locked; });
         });
         refreshIcons();
       }
