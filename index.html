@@ -434,13 +434,41 @@
       .lock-note .icon{color:#8A6410;margin-top:2px}
       @media (prefers-color-scheme: dark){.lock-note .icon{color:var(--sun)}}
       section.is-locked .tool-card,section.is-locked .act-grid,section.is-locked .phase-tabs,section.is-locked .who-strip,section.is-locked .sub-grid{opacity:.45;pointer-events:none}
+      /* ---------- BILINGUAL v2.0 ---------- */
+      .lang-sw{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface);flex:none}
+      .lang-sw button{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:800;font-size:.8rem;padding:8px 13px;cursor:pointer;min-height:44px;min-width:44px}
+      .lang-sw button.on{background:var(--brand);color:#fff}
+      @media (prefers-color-scheme: dark){.lang-sw button.on{color:#0B1A13}}
+      .gate-topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+      .seg button.on-unsure{background:var(--sun);color:#14100C}
+      .m-dom-head{font-family:"Nunito",sans-serif;font-weight:900;font-size:1rem;margin:20px 0 2px;color:var(--brand-deep)}
+      @media (prefers-color-scheme: dark){.m-dom-head{color:var(--brand)}}
+      /* Header landing ringkas di HP — logo + ID/EN + Masuk muat 1 baris tanpa overflow */
+      @media(max-width:480px){
+        .wrap{padding:0 16px}
+        .landing-bar{gap:8px}
+        .landing-bar .brand-logo{font-size:1rem;gap:7px;min-width:0}
+        .landing-bar .brand-logo img{width:32px;height:32px;border-radius:8px}
+        .landing-actions{gap:8px;min-width:0}
+        .lang-sw button{padding:6px 9px;min-width:38px;font-size:.75rem}
+        .landing-actions .btn{padding:10px 14px;font-size:.9rem;gap:6px;white-space:nowrap}
+        .landing-actions .btn .icon{width:18px;height:18px}
+        .gate-topbar{gap:8px}
+        .gate-topbar .brand-logo{font-size:1rem;gap:7px}
+        .gate-topbar .brand-logo img{width:32px;height:32px;border-radius:8px}
+      }
+      @media(max-width:360px){
+        .landing-actions .btn .icon{display:none}
+        .landing-actions .btn{padding:10px 12px}
+        .landing-bar .brand-logo{font-size:.95rem}
+      }
       @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.btn:active{transform:none}.toast{transition:none}}
     </style>
   </head>
   <body>
     <!-- GERBANG: LOGIN GOOGLE + KODE REDEEM -->
     <div class="gate" id="gate" hidden>
-      <div class="gate-topbar"><a class="brand-logo" href="#" aria-label="TumbuhRata — kembali ke halaman utama"><img src="data:image/png;base64,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" alt="" width="38" height="38" /><span class="brand-word">TumbuhRata</span></a></div>
+      <div class="gate-topbar"><a class="brand-logo" href="#" aria-label="TumbuhRata — kembali ke halaman utama"><img src="data:image/png;base64,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" alt="" width="38" height="38" /><span class="brand-word">TumbuhRata</span></a><span class="lang-sw" role="group" aria-label="Language / Bahasa"><button type="button" data-lang="id">ID</button><button type="button" data-lang="en">EN</button></span></div>
       <div class="gate-card">
         <div id="gate-step-loading">
           <h2>Sebentar ya…</h2>
@@ -498,11 +526,12 @@
     </div>
 
     <!-- LANDING PAGE — publik, untuk yang belum login -->
-    <div id="landing">
+    <div id="landing" class="landing-view">
       <div class="wrap">
         <div class="landing-bar">
           <a class="brand-logo" href="#" aria-label="TumbuhRata — kembali ke atas"><img src="data:image/png;base64,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" alt="" width="38" height="38" /><span class="brand-word">TumbuhRata</span></a>
           <div class="landing-actions">
+            <span class="lang-sw" role="group" aria-label="Language / Bahasa"><button type="button" data-lang="id">ID</button><button type="button" data-lang="en">EN</button></span>
             <button class="landing-note redeem-link btn-masuk" type="button">Sudah punya kode? Masuk dan aktifkan</button>
             <button class="btn btn-brand btn-masuk" type="button"><i data-lucide="log-in" class="icon"></i>Masuk</button>
           </div>
@@ -798,6 +827,312 @@
         </div>
       </section>
     </div>
+    <!-- LANDING PAGE — English version -->
+    <div id="landing-en" class="landing-view" hidden>
+      <div class="wrap">
+        <div class="landing-bar">
+          <a class="brand-logo" href="#" aria-label="TumbuhRata — back to top"><img src="data:image/png;base64,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" alt="" width="38" height="38" /><span class="brand-word">TumbuhRata</span></a>
+          <div class="landing-actions">
+            <span class="lang-sw" role="group" aria-label="Language / Bahasa"><button type="button" data-lang="id">ID</button><button type="button" data-lang="en">EN</button></span>
+            <button class="landing-note redeem-link btn-masuk" type="button">Already have a code? Sign in &amp; redeem</button>
+            <button class="btn btn-brand btn-masuk" type="button"><i data-lucide="log-in" class="icon"></i>Sign in</button>
+          </div>
+        </div>
+        <button class="landing-subnote redeem-link btn-masuk" type="button">Already have a code? Sign in &amp; redeem</button>
+        <div class="hero" style="padding-top:14px">
+          <div class="hero-grid">
+            <div>
+              <h1>Picky eater, tantrums, <em>not talking yet?</em> Track it all in one place.</h1>
+              <p class="lead">TumbuhRata turns the CDC milestone checklists and the everyday struggles of ages 1–3 into simple tools: check milestones, log meals, plan two weeks of play — and know exactly what to bring up at your child's next doctor visit.</p>
+              <div class="hero-cta">
+                <a class="btn btn-brand" href="#isi-en"><i data-lucide="clipboard-list" class="icon"></i>See what's inside</a>
+                <a class="btn btn-ghost" href="#paket-en"><i data-lucide="tag" class="icon"></i>See pricing</a>
+              </div>
+              <p class="src-line">Built on the CDC's “Learn the Signs. Act Early.” milestones. Every item is labeled with its source — CDC, WHO, or AAP.</p>
+            </div>
+            <div class="mock" role="img" aria-label="Sample milestone result for 18 months: 12 of 15 milestones marked Yes, with items to watch and discuss with the doctor">
+              <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">Milestone check · 18 months</span><span class="badge badge-src">Sample</span></div>
+              <div class="mock-body">
+                <div class="kat-banner kat-s" style="margin-top:0">
+                  <div class="kat-label" style="font-size:1.2rem">12 of 15 milestones marked “Yes”</div>
+                  <p>CDC checklists have no pass/fail grade — your result is the count, plus the items to watch below.</p>
+                </div>
+                <p class="mock-plan-t"><i data-lucide="eye" class="icon"></i>To watch &amp; discuss with the doctor</p>
+                <ul class="stim-list" style="margin-top:8px">
+                  <li><b>Language</b>Tries to say three or more words besides “mama” or “dada”</li>
+                  <li><b>Movement</b>Tries to use a spoon</li>
+                </ul>
+                <p class="mock-plan-t"><i data-lucide="calendar-check" class="icon"></i>Plus a 2-week play plan built from the items you marked.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEMS -->
+      <section class="block" style="padding-top:38px">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Sound familiar?</h2>
+            <p>The worries are the same in every house with a 1–3 year old. Each one has a tool here — not a lecture, a tool.</p>
+          </div>
+          <div class="prob-grid">
+            <div class="prob-card">
+              <p class="prob-quote">“He pushes the spoon away. Every meal turns into a negotiation.”</p>
+              <p class="prob-ans"><i data-lucide="arrow-right" class="icon"></i><span><b>Feeding log</b> — jot down what was offered and what actually happened. Patterns show up in a week.</span></p>
+            </div>
+            <div class="prob-card">
+              <p class="prob-quote">“Other kids her age are chatting. Mine has three words.”</p>
+              <p class="prob-ans"><i data-lucide="arrow-right" class="icon"></i><span><b>CDC milestone check</b> — answer Yes / Not sure / Not yet against what 75%+ of children do by this age.</span></p>
+            </div>
+            <div class="prob-card">
+              <p class="prob-quote">“One ‘no’ from me, and the floor gets a full performance.”</p>
+              <p class="prob-ans"><i data-lucide="arrow-right" class="icon"></i><span><b>Tantrum matrix</b> — match the situation to what's likely going on and what to try, based on AAP guidance.</span></p>
+            </div>
+            <div class="prob-card">
+              <p class="prob-quote">“Bedtime takes an hour. Then she's up at five.”</p>
+              <p class="prob-ans"><i data-lucide="arrow-right" class="icon"></i><span><b>Sleep calculator</b> — how much sleep 1–3 year olds actually need, and a bedtime that fits your wake-up time.</span></p>
+            </div>
+            <div class="prob-card">
+              <p class="prob-quote">“Diapers forever? I honestly can't tell if he's ready for the potty.”</p>
+              <p class="prob-ans"><i data-lucide="arrow-right" class="icon"></i><span><b>Toilet-readiness check</b> — the readiness signs the AAP tells parents to look for, in one quick list.</span></p>
+            </div>
+            <div class="prob-card">
+              <p class="prob-quote">“Am I playing with her enough? And… the right way?”</p>
+              <p class="prob-ans"><i data-lucide="arrow-right" class="icon"></i><span><b>16 play activities + a 2-week plan</b> — age-matched ideas using things already in your house.</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT'S INSIDE -->
+      <section class="block" id="isi-en">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>One place for the answers</h2>
+            <p>Three toolkits, one sign-in. Everything is a checklist, a log, or a plan — things you fill in and use, not articles to read.</p>
+          </div>
+
+          <div class="feat-block">
+            <div class="feat-head">
+              <div class="feat-ic"><i data-lucide="sprout" class="icon"></i></div>
+              <div>
+                <span class="feat-cat">Milestones</span>
+                <h3>Where is my child right now?</h3>
+              </div>
+            </div>
+            <div class="feat-grid">
+              <ul class="feat-list">
+                <li><i data-lucide="check" class="icon"></i><span>CDC checklists at <b>12, 15, 18, 24, 30, and 36 months</b> — all 78 items, in the CDC's own words.</span></li>
+                <li><i data-lucide="check" class="icon"></i><span>Four domains: Social/Emotional, Language/Communication, Cognitive, Movement/Physical Development.</span></li>
+                <li><i data-lucide="check" class="icon"></i><span>Answer <b>Yes / Not sure / Not yet</b> — the way the CDC checklist itself works.</span></li>
+                <li><i data-lucide="check" class="icon"></i><span>A results page: your “Yes” count, the items to watch, and a plan to practice them.</span></li>
+              </ul>
+              <div>
+                <p class="contoh-lbl">Sample output</p>
+                <div class="kat-banner kat-s" style="margin-top:0">
+                  <div class="kat-label" style="font-size:1.15rem">24 months — 11 of 13 Yes</div>
+                  <p>To discuss: kicks a ball; says two words together. Your 2-week plan is ready.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feat-block">
+            <div class="feat-head">
+              <div class="feat-ic"><i data-lucide="shapes" class="icon"></i></div>
+              <div>
+                <span class="feat-cat">Learning</span>
+                <h3>What should we play today?</h3>
+              </div>
+            </div>
+            <div class="feat-grid">
+              <ul class="feat-list">
+                <li><i data-lucide="check" class="icon"></i><span><b>16 play activities</b>, split clearly: 8 for ages 1–2, 8 for ages 2–3.</span></li>
+                <li><i data-lucide="check" class="icon"></i><span>Everyday materials — cups, blocks, socks, a ball. Nothing to buy.</span></li>
+                <li><i data-lucide="check" class="icon"></i><span>Each activity names the skill it builds, matched to the milestone domains.</span></li>
+                <li><i data-lucide="check" class="icon"></i><span>Short enough for real life: most take 5–10 minutes.</span></li>
+              </ul>
+              <div>
+                <p class="contoh-lbl">Sample activity · ages 2–3</p>
+                <div class="act" style="margin-top:0">
+                  <div class="n">1</div>
+                  <div class="act-body">
+                    <h4>Two-Step Treasure Hunt</h4>
+                    <p>Hide a favorite toy, then give two-step clues: “Pick up the cup, then look under it.” Builds: following two-step instructions.</p>
+                    <p class="alat">You need: a favorite toy to hide</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feat-block">
+            <div class="feat-head">
+              <div class="feat-ic"><i data-lucide="heart-pulse" class="icon"></i></div>
+              <div>
+                <span class="feat-cat">Parenting</span>
+                <h3>Calmer everyday days</h3>
+              </div>
+            </div>
+            <div class="feat-grid">
+              <ul class="feat-list">
+                <li><i data-lucide="check" class="icon"></i><span><b>Feeding log</b> for picky eating — spot what works, meal by meal.</span></li>
+                <li><i data-lucide="check" class="icon"></i><span><b>Sleep calculator</b> — recommended totals and a bedtime that fits your morning.</span></li>
+                <li><i data-lucide="check" class="icon"></i><span><b>Tantrum matrix</b> — six common situations, what's behind them, what to try.</span></li>
+                <li><i data-lucide="check" class="icon"></i><span><b>Toilet-readiness check</b> — the AAP readiness signs, scored in a minute.</span></li>
+              </ul>
+              <div>
+                <p class="contoh-lbl">Sample output</p>
+                <div class="calc-out" style="margin-top:0">Toilet readiness: <b>6 of 8 signs showing</b>. Many families start gentle practice now — no pressure, no punishment for accidents.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT FEELS -->
+      <section class="block">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>What it feels like to use it</h2>
+            <p>Three steps, a few minutes at a time — usually with one hand, while the other holds a toddler.</p>
+          </div>
+          <div class="steps steps-3">
+            <div class="step"><div class="step-n">1</div><b>Fill in</b><p>Pick your child's checkpoint, tap Yes / Not sure / Not yet, log a meal or two. No essays, no setup wizards.</p></div>
+            <div class="step"><div class="step-n">2</div><b>See results</b><p>A clear summary: what's on track, what to watch, and a 2-week play plan aimed at exactly those items.</p></div>
+            <div class="step"><div class="step-n">3</div><b>Track &amp; export</b><p>Come back anytime, watch the “Yes” count grow, and export everything to Excel to bring to appointments.</p></div>
+          </div>
+          <div class="bonus-row">
+            <span class="bonus-pill"><i data-lucide="save" class="icon"></i>Auto-saves as you tap</span>
+            <span class="bonus-pill"><i data-lucide="refresh-ccw" class="icon"></i>Syncs phone &amp; laptop</span>
+            <span class="bonus-pill"><i data-lucide="file-spreadsheet" class="icon"></i>Excel export</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOOLS NOT CONSULTATION -->
+      <section class="block">
+        <div class="wrap">
+          <div class="positioning" style="margin-top:0">
+            <h2>Tools, not a consultation</h2>
+            <p>TumbuhRata sells <b>tools</b> — checklists, logs, and planners that help you notice, record, and practice. It does not diagnose, and it never replaces your child's doctor. When something worries you, the app's job is to help you walk into that appointment with a clear, written list.</p>
+            <div class="pos-grid">
+              <div class="pos-item"><b><i data-lucide="wrench" class="icon"></i>Practical tools</b><p>Worksheets, trackers, and calculators for everyday use. No consultation group, no expert Q&amp;A sessions.</p></div>
+              <div class="pos-item"><b><i data-lucide="clipboard-check" class="icon"></i>No scores, no grades</b><p>CDC checklists don't give pass/fail results. You get a “Yes” count and a list of items to discuss with your pediatrician.</p></div>
+              <div class="pos-item"><b><i data-lucide="hand-heart" class="icon"></i>Decisions stay with parents</b><p>Notes and benchmarks help you observe. What you do with them is your call — and your pediatrician is your partner.</p></div>
+            </div>
+            <p style="margin-top:14px">In the CDC's words: “Learn the Signs. Act Early. materials are not a substitute for standardized, validated developmental screening tools.”</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOURCES -->
+      <section class="block">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Where does the content come from?</h2>
+            <p>No invented milestones, no opinion pieces. The checklists and tools are built from three public sources — and every item inside the app carries its source label.</p>
+          </div>
+          <div class="src-strip" style="margin-top:18px">
+            <span class="badge badge-resmi">CDC · Learn the Signs. Act Early.</span>
+            <span class="badge badge-resmi">WHO</span>
+            <span class="badge badge-resmi">AAP · HealthyChildren.org</span>
+          </div>
+          <details class="src-acc">
+            <summary>See the full source list</summary>
+            <div class="src-list">
+              <div class="src-item"><b>Milestones — CDC “Learn the Signs. Act Early.”</b><p>Checklists revised February 2022 with the AAP — one page per checkpoint: <a href="https://www.cdc.gov/act-early/milestones/1-year.html" target="_blank" rel="noopener">12 months</a>, <a href="https://www.cdc.gov/act-early/milestones/15-months.html" target="_blank" rel="noopener">15 months</a>, <a href="https://www.cdc.gov/act-early/milestones/18-months.html" target="_blank" rel="noopener">18 months</a>, <a href="https://www.cdc.gov/act-early/milestones/2-years.html" target="_blank" rel="noopener">2 years</a>, <a href="https://www.cdc.gov/act-early/milestones/30-months.html" target="_blank" rel="noopener">30 months</a>, <a href="https://www.cdc.gov/act-early/milestones/3-years.html" target="_blank" rel="noopener">3 years</a>. Hub: <a href="https://www.cdc.gov/act-early/milestones/" target="_blank" rel="noopener">cdc.gov/act-early/milestones</a></p></div>
+              <div class="src-item"><b>What to do if you're concerned — CDC</b><p>“You know your child best… talk to your child's doctor and share your concerns. Don't wait. Acting early can make a real difference!” <a href="https://www.cdc.gov/act-early/families/concerned.html" target="_blank" rel="noopener">cdc.gov/act-early/families/concerned</a></p></div>
+              <div class="src-item"><b>Screening schedule — AAP</b><p>General developmental screening at 9, 18, and 30 months; autism screening at 18 and 24 months, or whenever there is a concern.</p></div>
+              <div class="src-item"><b>Sleep amounts — AASM / AAP</b><p>American Academy of Sleep Medicine sleep-duration consensus, endorsed by the AAP.</p></div>
+              <div class="src-item"><b>Tantrum &amp; toilet-readiness guidance — AAP</b><p>American Academy of Pediatrics parent guidance (HealthyChildren.org).</p></div>
+              <div class="src-item"><b>The CDC definition</b><p>“Developmental milestones are things most children (75% or more) can do by a certain age.”</p></div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="block" id="paket-en">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Pricing</h2>
+            <p>One-time payment. No subscription, no renewals. Pay once on Gumroad, get a redeem code by email, and the tools are yours.</p>
+          </div>
+          <div class="price-grid">
+            <div class="price">
+              <p class="need-line">Start with one toolkit</p>
+              <h3 style="font-size:1.15rem">Basic</h3>
+              <div class="amt">$9 <small>one-time</small></div>
+              <ul>
+                <li><i data-lucide="check" class="icon"></i>1 of the 3 categories — you choose: Milestones, Learning, or Parenting</li>
+                <li><i data-lucide="check" class="icon"></i>All ages 1–3 years included in that category (every checkpoint, both age bands)</li>
+                <li><i data-lucide="check" class="icon"></i>Auto-save, Excel export, Ask AI included</li>
+              </ul>
+              <a class="btn btn-ghost" href="https://kingocad.gumroad.com" target="_blank" rel="noopener"><i data-lucide="shopping-bag" class="icon"></i>Buy Basic on Gumroad</a>
+            </div>
+            <div class="price featured">
+              <span class="flag">Everything included</span>
+              <p class="need-line">The full picture</p>
+              <h3 style="font-size:1.15rem">Complete</h3>
+              <div class="amt">$12 <small>one-time</small></div>
+              <ul>
+                <li><i data-lucide="check" class="icon"></i>All 3 categories: Milestones + Learning + Parenting</li>
+                <li><i data-lucide="check" class="icon"></i>All checkpoints 12–36 months and both Learning age bands</li>
+                <li><i data-lucide="check" class="icon"></i>2-week play plans built from your milestone answers</li>
+                <li><i data-lucide="check" class="icon"></i>Auto-save, Excel export, Ask AI included</li>
+              </ul>
+              <a class="btn btn-brand" href="https://kingocad.gumroad.com" target="_blank" rel="noopener"><i data-lucide="shopping-bag" class="icon"></i>Buy Complete on Gumroad</a>
+            </div>
+          </div>
+          <p class="fineprint" style="margin-top:14px">After checkout, Gumroad emails you a receipt with your redeem code. Sign in, enter the code once, and your plan unlocks right away — one code works on one Google account.</p>
+        </div>
+      </section>
+
+      <!-- HOW TO START + FAQ -->
+      <section class="block">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>How to start</h2>
+            <p>Three steps from checkout to your first checklist.</p>
+          </div>
+          <div class="steps steps-3">
+            <div class="step"><div class="step-ic"><i data-lucide="shopping-bag" class="icon"></i></div><b>Buy on Gumroad</b><p>Pick Basic or Complete and check out — it takes about a minute.</p></div>
+            <div class="step"><div class="step-ic"><i data-lucide="key-round" class="icon"></i></div><b>Get your code</b><p>Your redeem code arrives in your Gumroad receipt email.</p></div>
+            <div class="step"><div class="step-ic"><i data-lucide="log-in" class="icon"></i></div><b>Sign in &amp; redeem</b><p>Sign in with Google, enter the code once, and your tools unlock on every device you use.</p></div>
+          </div>
+          <h3 style="font-size:1.25rem;font-weight:900;margin-top:34px">Frequently asked</h3>
+          <div class="faq-list">
+            <details class="faq">
+              <summary>Is this a diagnosis or a medical screening?</summary>
+              <p>No. TumbuhRata is a set of parent tools built on the CDC's milestone checklists. The CDC itself says its “Learn the Signs. Act Early.” materials are not a substitute for standardized, validated developmental screening tools. The app helps you observe and keep notes — your child's doctor does the diagnosing.</p>
+            </details>
+            <details class="faq">
+              <summary>Which milestone standard do you use?</summary>
+              <p>The CDC “Learn the Signs. Act Early.” checklists, revised in February 2022 together with the AAP. Checkpoints are 12, 15, 18, 24, 30, and 36 months, and every item is something 75% or more of children can do by that age. Items are shown in the CDC's own wording.</p>
+            </details>
+            <details class="faq">
+              <summary>What if my child isn't meeting a milestone?</summary>
+              <p>The CDC's advice is direct: “You know your child best. If your child is not meeting the milestones for his or her age… talk to your child's doctor and share your concerns. Don't wait. Acting early can make a real difference!” The Results tab turns your answers into a written list you can bring to that conversation, and the AAP recommends formal developmental screening at 9, 18, and 30 months (autism screening at 18 and 24 months) — ask your doctor about it.</p>
+            </details>
+            <details class="faq">
+              <summary>What ages does it cover?</summary>
+              <p>Ages 1–3 years. Milestone checkpoints run 12–36 months; Learning activities are split into 1–2 years and 2–3 years so they match what your child can actually do.</p>
+            </details>
+            <details class="faq">
+              <summary>Basic or Complete — what's the difference?</summary>
+              <p>Basic unlocks one category of your choice (Milestones, Learning, or Parenting) for all ages 1–3. Complete unlocks all three. Both are one-time payments with auto-save, Excel export, and Ask AI included.</p>
+            </details>
+            <details class="faq">
+              <summary>How do I get access after paying?</summary>
+              <p>Gumroad emails your receipt with a redeem code. Tap “Sign in” at the top of this page, sign in with Google, and enter the code when asked — it's a one-time step, and your plan stays attached to your account.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <main id="app" hidden>
       <!-- BAR AKUN -->
       <div class="wrap">
@@ -805,6 +1140,7 @@
           <a class="brand-logo acct-logo" href="#" aria-label="TumbuhRata — kembali ke atas"><img src="data:image/png;base64,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" alt="" width="36" height="36" /><span class="brand-word">TumbuhRata</span></a>
           <span class="acct-id"><i data-lucide="user" class="icon"></i><span id="acct-email"></span></span>
           <span class="badge badge-resmi" id="acct-tier"></span>
+          <span class="lang-sw" role="group" aria-label="Language / Bahasa"><button type="button" data-lang="id">ID</button><button type="button" data-lang="en">EN</button></span>
           <button class="btn btn-brand btn-export-dup" type="button" style="margin-left:auto"><i data-lucide="download" class="icon"></i><span class="exp-full">Unduh Hasil (Excel)</span><span class="exp-short">Excel</span></button>
           <button class="btn btn-ghost" type="button" id="btn-logout-2" aria-label="Keluar"><i data-lucide="log-out" class="icon"></i><span class="logout-txt">Keluar</span></button>
         </div>
@@ -1171,6 +1507,486 @@
       "Menunjukkan minat pada toilet atau ingin memakai celana seperti orang dewasa"
     ];
 
+    /* ================= BILINGUAL v2.0: PILIHAN BAHASA ================= */
+    var LANG = "id";
+    try { LANG = localStorage.getItem("tr-lang") === "en" ? "en" : "id"; } catch(e){}
+    window.__trLang = LANG;
+    var MILESTONES_EN = {
+      12: [
+        {d:"Social/Emotional", t:"Plays games with you, like pat-a-cake", s:"CDC", stim:"Play pat-a-cake and peekaboo daily; pause and wait for her to start it again."},
+        {d:"Language/Communication", t:"Waves \"bye-bye\"", s:"CDC", stim:"Wave and say \"bye-bye\" at every goodbye, and wave back big when he tries."},
+        {d:"Language/Communication", t:"Calls a parent \"mama\" or \"dada\" or another special name", s:"CDC", stim:"Name yourself often in play — \"Mama is here!\" — and cheer any attempt."},
+        {d:"Language/Communication", t:"Understands \"no\" (pauses briefly or stops when you say it)", s:"CDC", stim:"Use a calm, clear \"no\" with a gentle gesture, then redirect to something allowed."},
+        {d:"Cognitive", t:"Puts something in a container, like a block in a cup", s:"CDC", stim:"Offer cups and blocks; drop one in yourself, then hand it over and wait."},
+        {d:"Cognitive", t:"Looks for things he sees you hide, like a toy under a blanket", s:"CDC", stim:"Hide a favorite toy under a cloth while she watches, then let her pull it off."},
+        {d:"Movement/Physical Development", t:"Pulls up to stand", s:"CDC", stim:"Place a favorite toy on a sturdy low table so he wants to pull up to reach it."},
+        {d:"Movement/Physical Development", t:"Walks, holding on to furniture", s:"CDC", stim:"Line up sturdy furniture with small gaps and put a toy at the far end."},
+        {d:"Movement/Physical Development", t:"Drinks from a cup without a lid, as you hold it", s:"CDC", stim:"Offer small sips from an open cup at meals while you hold it steady."},
+        {d:"Movement/Physical Development", t:"Picks things up between thumb and pointer finger, like small bits of food", s:"CDC", stim:"Scatter soft finger foods on the tray so she practices the pincer grasp."}
+      ],
+      15: [
+        {d:"Social/Emotional", t:"Copies other children while playing, like taking toys out of a container when another child does", s:"CDC", stim:"Arrange park or playdate time; play alongside her and copy what she does."},
+        {d:"Social/Emotional", t:"Shows you an object she likes", s:"CDC", stim:"When he brings you something, stop, look at it together, and name it with excitement."},
+        {d:"Social/Emotional", t:"Claps when excited", s:"CDC", stim:"Clap together during songs and surprises; pause so she can join in."},
+        {d:"Social/Emotional", t:"Hugs stuffed doll or other toy", s:"CDC", stim:"Keep a favorite stuffed toy nearby and model hugging and rocking it."},
+        {d:"Social/Emotional", t:"Shows you affection (hugs, cuddles, or kisses you)", s:"CDC", stim:"Offer open arms and cuddle time; respond warmly to every approach."},
+        {d:"Language/Communication", t:"Tries to say one or two words besides \"mama\" or \"dada,\" like \"ba\" for ball or \"da\" for dog", s:"CDC", stim:"Name things all day — \"ball!\", \"dog!\" — and celebrate any sound she aims at them."},
+        {d:"Language/Communication", t:"Looks at a familiar object when you name it", s:"CDC", stim:"Ask \"Where's the ball?\" during play and look together when he finds it."},
+        {d:"Language/Communication", t:"Follows directions given with both a gesture and words. For example, she gives you a toy when you hold out your hand and say, \"Give me the toy\".", s:"CDC", stim:"Hold out your hand and say \"Give me the toy\" many times a day; praise the handover."},
+        {d:"Language/Communication", t:"Points to ask for something or to get help", s:"CDC", stim:"Put a wanted toy just out of reach so she points for it; then give it right away."},
+        {d:"Cognitive", t:"Tries to use things the right way, like a phone, cup, or book", s:"CDC", stim:"Hand her a cup, spoon, and toy phone in play and copy her pretend use."},
+        {d:"Cognitive", t:"Stacks at least two small objects, like blocks", s:"CDC", stim:"Stack two blocks, knock them down laughing, then let him try."},
+        {d:"Movement/Physical Development", t:"Takes a few steps on his own", s:"CDC", stim:"Sit a short distance away with open arms and a favorite toy; cheer every step."},
+        {d:"Movement/Physical Development", t:"Uses fingers to feed herself some food", s:"CDC", stim:"Serve soft finger foods and let her feed herself — mess included."}
+      ],
+      18: [
+        {d:"Social/Emotional", t:"Moves away from you, but looks to make sure you are close by", s:"CDC", stim:"Play in a safe open space; stay visible and wave when he checks back."},
+        {d:"Social/Emotional", t:"Points to show you something interesting", s:"CDC", stim:"Follow her point, look together, and talk about what she found."},
+        {d:"Social/Emotional", t:"Puts hands out for you to wash them", s:"CDC", stim:"Make handwashing a game before meals; hold hands out together."},
+        {d:"Social/Emotional", t:"Looks at a few pages in a book with you", s:"CDC", stim:"Read a sturdy board book daily, even just a few pages at his pace."},
+        {d:"Social/Emotional", t:"Helps you dress him by pushing arm through sleeve or lifting up foot", s:"CDC", stim:"Pause while dressing and let her push her arm or foot in herself."},
+        {d:"Language/Communication", t:"Tries to say three or more words besides \"mama\" or \"dada\"", s:"CDC", stim:"Offer choices out loud — \"milk or water?\" — and repeat his word attempts back to him."},
+        {d:"Language/Communication", t:"Follows one-step directions without any gestures, like giving you the toy when you say, \"Give it to me.\"", s:"CDC", stim:"Give simple spoken requests without pointing — \"Give it to me\" — then praise success."},
+        {d:"Cognitive", t:"Copies you doing chores, like sweeping with a broom", s:"CDC", stim:"Give her a small broom or cloth and sweep side by side."},
+        {d:"Cognitive", t:"Plays with toys in a simple way, like pushing a toy car", s:"CDC", stim:"Push cars together with sound effects; roll one to him and wait for a return."},
+        {d:"Movement/Physical Development", t:"Walks without holding on to anyone or anything", s:"CDC", stim:"Practice short walks between the furniture and you, on a soft, clear floor."},
+        {d:"Movement/Physical Development", t:"Scribbles", s:"CDC", stim:"Tape big paper down and offer thick crayons; scribble together."},
+        {d:"Movement/Physical Development", t:"Drinks from a cup without a lid and may spill sometimes", s:"CDC", stim:"Give a small open cup with just a little water at meals; expect spills."},
+        {d:"Movement/Physical Development", t:"Feeds himself with his fingers", s:"CDC", stim:"Keep offering finger foods he can manage entirely on his own."},
+        {d:"Movement/Physical Development", t:"Tries to use a spoon", s:"CDC", stim:"Serve thick foods like yogurt and let her scoop, however messy it gets."},
+        {d:"Movement/Physical Development", t:"Climbs on and off a couch or chair without help", s:"CDC", stim:"Supervise couch-climbing practice; show how to come down feet-first."}
+      ],
+      24: [
+        {d:"Social/Emotional", t:"Notices when others are hurt or upset, like pausing or looking sad when someone is crying", s:"CDC", stim:"Name feelings out loud — \"She's crying, she's sad\" — and comfort together."},
+        {d:"Social/Emotional", t:"Looks at your face to see how to react in a new situation", s:"CDC", stim:"Smile and stay calm in new situations; your face is his guide."},
+        {d:"Language/Communication", t:"Points to things in a book when you ask, like \"Where is the bear?\"", s:"CDC", stim:"Ask \"Where's the bear?\" in picture books and celebrate every pointing find."},
+        {d:"Language/Communication", t:"Says at least two words together, like \"More milk.\"", s:"CDC", stim:"Model two-word phrases — \"more milk,\" \"big ball\" — and gently expand what she says."},
+        {d:"Language/Communication", t:"Points to at least two body parts when you ask him to show you", s:"CDC", stim:"Play \"Where's your nose?\" at bath time and in the mirror."},
+        {d:"Language/Communication", t:"Uses more gestures than just waving and pointing, like blowing a kiss or nodding yes", s:"CDC", stim:"Blow kisses at goodbyes and nod together at yes/no questions."},
+        {d:"Cognitive", t:"Holds something in one hand while using the other hand; for example, holding a container and taking the lid off", s:"CDC", stim:"Offer jars and containers to hold in one hand and open with the other."},
+        {d:"Cognitive", t:"Tries to use switches, knobs, or buttons on a toy", s:"CDC", stim:"Provide toys with big buttons, switches, and knobs; let her experiment freely."},
+        {d:"Cognitive", t:"Plays with more than one toy at the same time, like putting toy food on a toy plate", s:"CDC", stim:"Set up pretend cooking: plates, toy food, and a pot to combine."},
+        {d:"Movement/Physical Development", t:"Kicks a ball", s:"CDC", stim:"Roll a big soft ball to his feet and cheer every kick."},
+        {d:"Movement/Physical Development", t:"Runs", s:"CDC", stim:"Play chase in a safe open space; run together in short bursts."},
+        {d:"Movement/Physical Development", t:"Walks (not climbs) up a few stairs with or without help", s:"CDC", stim:"Practice a few low steps holding the rail, one step at a time."},
+        {d:"Movement/Physical Development", t:"Eats with a spoon", s:"CDC", stim:"Offer a spoon at every meal with scoopable foods like oatmeal."}
+      ],
+      30: [
+        {d:"Social/Emotional", t:"Plays next to other children and sometimes plays with them", s:"CDC", stim:"Set up side-by-side play with duplicate toys at the park or on playdates."},
+        {d:"Social/Emotional", t:"Shows you what she can do by saying, \"Look at me!\"", s:"CDC", stim:"Watch, cheer, and describe what he did: \"You jumped so high!\""},
+        {d:"Social/Emotional", t:"Follows simple routines when told, like helping to pick up toys when you say, \"It's clean-up time.\"", s:"CDC", stim:"Use the same clean-up song and words every day, and tidy up together."},
+        {d:"Language/Communication", t:"Says about 50 words", s:"CDC", stim:"Talk through routines, name everything, and read daily to grow her word bank."},
+        {d:"Language/Communication", t:"Says two or more words together, with one action word, like \"Doggie run\"", s:"CDC", stim:"Describe actions as they happen: \"Doggie run!\" \"Bird fly!\""},
+        {d:"Language/Communication", t:"Names things in a book when you point and ask, \"What is this?\"", s:"CDC", stim:"Point and ask \"What is this?\" in books; wait a moment, then name it together."},
+        {d:"Language/Communication", t:"Says words like \"I,\" \"me,\" or \"we\"", s:"CDC", stim:"Model \"I did it!\" and \"my turn\" during games and daily routines."},
+        {d:"Cognitive", t:"Uses things to pretend, like feeding a block to a doll as if it were food", s:"CDC", stim:"Join the pretend play: feed the doll, then hand him the \"spoon\" block."},
+        {d:"Cognitive", t:"Shows simple problem-solving skills, like standing on a small stool to reach something", s:"CDC", stim:"Place a wanted item slightly high (supervised) and let her figure out the stool."},
+        {d:"Cognitive", t:"Follows two-step instructions like \"Put the toy down and close the door.\"", s:"CDC", stim:"Play two-step errands: \"Pick up the cup and put it on the table.\""},
+        {d:"Cognitive", t:"Shows he knows at least one color, like pointing to a red crayon when you ask, \"Which one is red?\"", s:"CDC", stim:"Ask \"Which one is red?\" with crayons and clothes throughout the day."},
+        {d:"Movement/Physical Development", t:"Uses hands to twist things, like turning doorknobs or unscrewing lids", s:"CDC", stim:"Offer safe jars and lids to twist open and closed."},
+        {d:"Movement/Physical Development", t:"Takes some clothes off by himself, like loose pants or an open jacket", s:"CDC", stim:"Start dressing routines with easy, loose clothes he can remove himself."},
+        {d:"Movement/Physical Development", t:"Jumps off the ground with both feet", s:"CDC", stim:"Hold hands and jump together; count \"1, 2, jump!\""},
+        {d:"Movement/Physical Development", t:"Turns book pages, one at a time, when you read to her", s:"CDC", stim:"Let her be the page-turner at story time, one page at a time."}
+      ],
+      36: [
+        {d:"Social/Emotional", t:"Calms down within 10 minutes after you leave her, like at a childcare drop off", s:"CDC", stim:"Practice short separations with a calm, predictable goodbye routine."},
+        {d:"Social/Emotional", t:"Notices other children and joins them to play", s:"CDC", stim:"Visit playgrounds and gently help him join in: \"Can I play too?\""},
+        {d:"Language/Communication", t:"Talks with you in conversation using at least two back-and-forth exchanges", s:"CDC", stim:"Ask open questions at meals and wait for her answers, back and forth."},
+        {d:"Language/Communication", t:"Asks \"who,\" \"what,\" \"where,\" or \"why\" questions, like \"Where is mommy/daddy?\"", s:"CDC", stim:"Answer his questions patiently and ask some back: \"Where is Daddy?\""},
+        {d:"Language/Communication", t:"Says what action is happening in a picture or book when asked, like \"running,\" \"eating,\" or \"playing\"", s:"CDC", stim:"Ask \"What's he doing?\" in picture books — running, eating, playing."},
+        {d:"Language/Communication", t:"Says first name, when asked", s:"CDC", stim:"Play \"What's your name?\" as a game with family and stuffed toys."},
+        {d:"Language/Communication", t:"Talks well enough for others to understand, most of the time", s:"CDC", stim:"Have regular chats with relatives; repeat back what he says, clearly."},
+        {d:"Cognitive", t:"Draws a circle, when you show him how", s:"CDC", stim:"Draw big circles together — crayons, chalk, even a stick in sand."},
+        {d:"Cognitive", t:"Avoids touching hot objects, like a stove, when you warn her", s:"CDC", stim:"Teach \"hot — don't touch\" with one consistent word and gesture near the kitchen."},
+        {d:"Movement/Physical Development", t:"Strings items together, like large beads or macaroni", s:"CDC", stim:"String big beads or pasta onto a stiff lace; start the first one for him."},
+        {d:"Movement/Physical Development", t:"Puts on some clothes by himself, like loose pants or a jacket", s:"CDC", stim:"Lay out loose pants and a jacket; give her time to dress herself."},
+        {d:"Movement/Physical Development", t:"Uses a fork", s:"CDC", stim:"Serve soft chunks like banana and pasta with a toddler fork at meals."}
+      ]
+    };
+    var AGE_POINTS_EN = [12,15,18,24,30,36];
+    var EDU_EN = {
+      a: {label:"Ages 1–2 years", items:[
+        {t:"Fill, Dump, Repeat", d:"Drop an object in, tip it out, then hand the container over. Toddlers repeat this for ages — it is real learning: things go in, things come out.", alat:"A container and 5–6 safe objects (blocks, big lids, soft balls) · 5 min"},
+        {t:"Hide-and-Find", d:"Hide the toy under the blanket while your child watches, then ask \"Where did it go?\" Let her pull the blanket off. Make it slightly harder over days.", alat:"A favorite toy and a small blanket · 5 min"},
+        {t:"First Scribbles", d:"Scribble together — dots, lines, big circles. Name what you draw. Gripping and marking are the whole point; the picture is a bonus.", alat:"Thick crayons and big paper taped to the table or floor · 5–10 min"},
+        {t:"Kitchen Band", d:"Tap a simple rhythm and let your child copy it. Take turns being the \"band leader.\" Copying you is exactly the skill this age is building.", alat:"Pots, lids, and wooden spoons · 5 min"},
+        {t:"Push-and-Go Parade", d:"Push a car to your child and wait for the return push. For new walkers, parade slowly along the furniture and cheer every lap.", alat:"Push toys, toy cars, or a ball · 10 min"},
+        {t:"Point-and-Name Walk", d:"Walk slowly and name everything you pass: \"Chair. Cup. Dog!\" Pause and let your child point first sometimes — pointing and looking when you name things are CDC language milestones.", alat:"Just your home or yard · 10 min"},
+        {t:"Stack & Crash", d:"Stack two together, then let your child knock them down (the best part). Build again. Two stacked blocks is a 15-month CDC cognitive milestone.", alat:"Blocks or stacking cups · 5–10 min"},
+        {t:"Copy My Clap", d:"Clap during songs, clap when something exciting happens, and hold pauses so your child can clap back. Clapping when excited is a 15-month CDC milestone.", alat:"Hands and a favorite song · 5 min"}
+      ]},
+      b: {label:"Ages 2–3 years", items:[
+        {t:"Color Sorting Kitchen", d:"Sort objects into bowls by color, naming each one: \"Red goes here.\" Start with two colors; add a third when it gets easy. Knowing a color is a 30-month CDC milestone.", alat:"Two or three bowls and objects in matching colors · 10 min"},
+        {t:"Pretend Picnic", d:"Set a picnic, serve the doll, and narrate: \"Bear is eating!\" Pretend play with more than one toy at once is a CDC cognitive milestone at 2 years — and it grows fast from here.", alat:"Toy food (or blocks as \"food\"), plates, and a doll or stuffed animal · 10 min"},
+        {t:"Two-Step Treasure Hunt", d:"Give two-step instructions: \"Pick up the cup, then look under it.\" Following two-step instructions is a 30-month CDC cognitive milestone — make it a game, not a test.", alat:"A favorite toy to hide · 10 min"},
+        {t:"Kick & Count", d:"Kick the ball back and forth, count the kicks out loud together, and finish with a run to the \"goal.\" Kicking and running are 24-month CDC movement milestones.", alat:"A soft ball and space to run · 10 min"},
+        {t:"Bead Stringing", d:"String beads together, then pull them off and start again. Stringing items together is a 36-month CDC fine-motor milestone. Always supervise — beads are a choking hazard for under-3s.", alat:"Large beads or dry macaroni and a stiff lace or pipe cleaner · 10 min"},
+        {t:"What's He Doing?", d:"Point at a character and ask \"What's he doing?\" — running, eating, playing. Naming actions in pictures is a 36-month CDC language milestone.", alat:"A picture book with clear actions · 5–10 min"},
+        {t:"Dress-Up Relay", d:"Race (gently) to put clothes on and take them off again. Dressing and undressing independently are CDC movement milestones at 30 and 36 months — loose clothes make success possible.", alat:"Loose pants, an open jacket, big shoes · 10 min"},
+        {t:"Jump the River", d:"Lay a \"river\" on the floor and jump over it with both feet — then make it a little wider. Jumping with both feet is a 30-month CDC movement milestone.", alat:"Painter's tape or a scarf on the floor · 5–10 min"}
+      ]}
+    };
+    var TANTRUM_EN = [
+      ["Wants something you said \"no\" to", "He is learning whether \"no\" moves. The feeling is real even when the answer stays no. Stay calm and close. Name the feeling — \"You really want it. It's hard to wait.\" — hold the limit, and offer what he can have instead."],
+      ["Tired, hungry, or unwell", "A body that needs food or rest has almost no patience left for anything else. Feed, rest, or head home. Shorten the plan, and keep daily routines predictable so needs get met before they boil over."],
+      ["Frustrated by a hard task", "The skill is just out of reach — the zipper, the tower, the puzzle piece. Help with one small step only, praise the effort out loud, or quietly swap in an easier version of the same task."],
+      ["A transition — leaving the park, ending play", "Switching activities without warning is genuinely hard at this age. Give a two-minute warning and a \"last thing\" choice: \"One more slide or one more swing?\" Then follow through, kindly and firmly."],
+      ["Wants to do it herself", "Independence is the developmental job of ages 1–3. \"Myself!\" is a milestone talking. Offer two safe choices and let her do the parts she can — pour from a small pitcher, carry her own bag, choose the shirt."],
+      ["Overstimulated — noise, crowds, a long day", "Too much input at once: the system overloads and the meltdown is the release valve. Move somewhere quieter, hold her close, lower lights and voices. Fewer words, more calm. Talk about it later, when everyone is steady."]
+    ];
+    var TOILET_EN = [
+      "Stays dry for at least 2 hours at a time",
+      "Wakes up dry after naps",
+      "Tells you — with words, sounds, or gestures — when she needs to go or has gone",
+      "Shows interest in the potty, or in watching others use the toilet",
+      "Can pull pants up and down",
+      "Can follow simple instructions",
+      "Is bothered by wet or dirty diapers",
+      "Has regular, predictable bowel movements"
+    ];
+    var RED_FLAGS_EN = [
+      {max:99, t:"Any age: has lost skills he or she once had — words, play, or movement"},
+      {max:18, t:"By 18 months: not walking without holding on to anyone or anything"},
+      {max:24, t:"By 24 months: not yet saying two words together, like \"More milk\""},
+      {max:36, t:"By 36 months: speech is hard for others to understand most of the time"}
+    ];
+    if(LANG === "en"){
+      MILESTONES = MILESTONES_EN; AGE_POINTS = AGE_POINTS_EN;
+      EDU = EDU_EN; TANTRUM = TANTRUM_EN; TOILET = TOILET_EN; RED_FLAGS = RED_FLAGS_EN;
+    }
+    document.querySelectorAll(".lang-sw button").forEach(function(b){
+      var on = b.getAttribute("data-lang") === LANG;
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.classList.toggle("on", on);
+      b.addEventListener("click", function(){
+        var v = b.getAttribute("data-lang");
+        if(v === LANG) return;
+        try { localStorage.setItem("tr-lang", v); } catch(e){}
+        location.reload();
+      });
+    });
+    /* ================= BILINGUAL (v2.0): EN UI STRINGS ================= */
+    var PHRASES_EN = {
+      "Sebentar ya…":"Just a moment…",
+      "Sedang memeriksa akses akun Anda.":"Checking your account access.",
+      "Coba lagi":"Try again",
+      "Keluar":"Sign out",
+      "Masuk dulu, ya":"Sign in first",
+      "Masuk dengan Google":"Sign in with Google",
+      "Coba lagi lewat jendela popup":"Try again in a popup window",
+      "Anda akan diarahkan ke Google, lalu kembali ke sini.":"You'll be taken to Google, then brought back here.",
+      "Kembali ke halaman utama":"Back to the overview",
+      "Masukkan kode redeem":"Enter your redeem code",
+      "Kode redeem":"Redeem code",
+      "mis. TR-AB12-CD34":"e.g. TR-AB12-CD34",
+      "Kode ada di email/WA setelah pembayaran.":"Your code is in the email/receipt you got after paying.",
+      "Aktifkan kode":"Activate code",
+      "Info pembelian":"How to buy",
+      "Keluar dari akun ini":"Sign out of this account",
+      "Pilih 1 kategori worksheet":"Choose 1 worksheet category",
+      "Paket Basic membuka satu kategori worksheet. Pilihan ini tersimpan di akun Anda; paket Complete membuka ketiganya.":"The Basic plan opens one worksheet category. Your choice is saved to your account; the Complete plan opens all three.",
+      "Tumbuh Kembang — cek milestone":"Milestones — CDC checklist",
+      "Pendidikan Anak — aktivitas bermain-belajar":"Learning — play activities",
+      "Parenting Harian — makan, tidur, tantrum, toilet":"Everyday Parenting — feeding, sleep, tantrums, toilet",
+      "Profil si kecil":"Your child's profile",
+      "Nama panggilan anak":"Child's first name or nickname",
+      "mis. Bima":"e.g. Mia",
+      "Usia anak (bulan)":"Child's age (months)",
+      "Hasil":"Results",
+      "Tumbuh Kembang":"Milestones",
+      "Pendidikan":"Learning",
+      "Parenting":"Parenting",
+      "Perubahan tersimpan otomatis":"Changes save automatically",
+      "Melanjutkan progres terakhir — lanjutkan kapan sempat.":"Picking up your last progress — continue whenever you can.",
+      "Hasil Skrining & Rekomendasi":"Results & Recommendations",
+      "Unduh Hasil ke Excel":"Download results to Excel",
+      "Unduh Hasil (Excel)":"Download results (Excel)",
+      "Excel":"Excel",
+      "Tumbuh Kembang — Cek Milestone":"Milestones — CDC Checklist",
+      "Kenapa begini?":"Why this way?",
+      "Hasil Skrining":"Checklist result",
+      "Pendidikan — Bermain Sambil Belajar":"Learning — Play & Learn",
+      "Fase 1–2 tahun":"Ages 1–2 years",
+      "Fase 2–3 tahun":"Ages 2–3 years",
+      "Parenting Harian":"Everyday Parenting",
+      "Log Makan & Aturan Anti-GTM":"Feeding Log & Picky-Eating Basics",
+      "Pelajari dulu":"Read first",
+      "Waktu makan":"Meal",
+      "Sarapan":"Breakfast",
+      "Makan siang":"Lunch",
+      "Makan malam":"Dinner",
+      "Selingan":"Snack",
+      "Menu":"Menu",
+      "mis. nasi, ayam, bayam":"e.g. rice, chicken, spinach",
+      "Porsi yang habis":"How much was eaten",
+      "Habis":"All of it",
+      "Sekitar ¾":"About ¾",
+      "Sekitar ½":"About ½",
+      "Sekitar ¼":"About ¼",
+      "Hampir tidak dimakan":"Almost none",
+      "Detail (opsional)":"Details (optional)",
+      "Durasi (menit)":"Duration (minutes)",
+      "mis. 20":"e.g. 20",
+      "Ada layar saat makan?":"Screen during the meal?",
+      "Tidak":"No",
+      "Ya":"Yes",
+      "Catatan":"Note",
+      "mis. mau pegang sendok sendiri":"e.g. wanted to hold the spoon",
+      "Tambah ke log":"Add to log",
+      "Kalkulator Tidur & Wake Window":"Sleep Calculator",
+      "Jam bangun pagi (24 jam)":"Morning wake-up time",
+      "Kelompok usia":"Age group",
+      "1–2 tahun":"1–2 years",
+      "3 tahun":"3 years",
+      "Matriks Tantrum: Pemicu → Langkah":"Tantrum Matrix: Situation → What to try",
+      "Pemicu umum":"Common situation",
+      "Langkah yang bisa dicoba":"What to try",
+      "Cek Kesiapan Toilet Training":"Toilet-Readiness Check",
+      "Aktivitas fisik per hari":"Active play per day",
+      "Layar per hari (usia 2–4 th)":"Screen time per day (ages 2–4)",
+      "Tidur per hari (usia 1–2 th)":"Sleep per day (ages 1–2)",
+      "Tanya AI":"Ask AI",
+      "Tanya Cepat":"Ask AI",
+      "Anak 18 bulan belum bisa jalan?":"My 18-month-old isn't walking yet?",
+      "Anak GTM gimana?":"Picky eater — what helps?",
+      "Tantrum di tempat umum?":"Tantrum in public?",
+      "Kapan siap toilet training?":"When is potty readiness?",
+      "Tulis pertanyaan…":"Type your question…",
+      "Kirim":"Send",
+      "Paket Basic":"Basic plan",
+      "Paket Complete":"Complete plan"
+    };
+    function applyI18n(){
+      if(LANG !== "en") return;
+      document.documentElement.lang = "en";
+      document.title = "TumbuhRata — Toddler Milestones & Parenting Tools (Ages 1–3)";
+      /* 1) exact text-node phrase swap in gate / app / footer / chat */
+      var roots = [$("gate"), $("app"), document.querySelector("footer"), $("chat-panel"), $("chat-fab")];
+      roots.forEach(function(root){
+        if(!root) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+        var nodes = [];
+        while(walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(function(n){
+          var t = n.nodeValue, k = t.trim();
+          if(PHRASES_EN[k] !== undefined){
+            n.nodeValue = t.replace(k, PHRASES_EN[k]);
+          }
+        });
+      });
+      /* 2) targeted blocks (mixed markup) */
+      function setHTML(sel, html){ var el = document.querySelector(sel); if(el) el.innerHTML = html; }
+      function setText(sel, txt){ var el = document.querySelector(sel); if(el) el.textContent = txt; }
+      setHTML("#gate-step-login .desc", "TumbuhRata opens with an account. Sign in with Google, then activate the redeem code from your purchase — just once. After that, Google sign-in is enough, and your worksheet progress is saved and synced across your devices.");
+      setHTML("#gate-step-login .gate-note", "No code yet? <b>Basic $9</b> · <b>Complete $12</b> — one-time payment, no subscription. Your code arrives in your Gumroad receipt email.");
+      setHTML("#gate-step-redeem .desc", "You're signed in with Google. Enter the code you received after buying to unlock the worksheets. One code works for one Google account only — it will be permanently tied to <b id=\"redeem-email\"></b>.");
+      setText("#redeem-hint", "Your code is in the Gumroad receipt email after checkout.");
+      setHTML("#redeem-buy-info h3", "How to buy");
+      setHTML("#redeem-buy-info p", "To unlock the worksheets, buy a plan first: <b>Basic $9</b> (one category) or <b>Complete $12</b> (all three categories) — one-time payment, no subscription. After checkout, your redeem code arrives by email and can be activated on this screen.");
+      var buyBtns = document.querySelectorAll("#redeem-buy-info .btn");
+      buyBtns.forEach(function(b, i){
+        b.setAttribute("href", "https://kingocad.gumroad.com");
+        b.innerHTML = "";
+        var ic = document.createElement("i"); ic.setAttribute("data-lucide", i === 0 ? "shopping-bag" : "package"); ic.className = "icon";
+        b.appendChild(ic); b.appendChild(document.createTextNode(i === 0 ? "Buy on Gumroad" : "See plans on Gumroad"));
+      });
+      var buyHelp = document.querySelector("#redeem-buy-info p:nth-of-type(2)");
+      if(buyHelp) buyHelp.innerHTML = "Questions about your code? Contact the seller via the <a href=\"https://kingocad.gumroad.com\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--brand);font-weight:700\">Gumroad storefront</a>.";
+      setHTML("#hasil .hasil-disc span", "<b>A checklist summary, not a diagnosis.</b> One “Not yet” is not a verdict. If you're unsure, talk to your child's pediatrician.");
+      setHTML("#hasil .export-band p", "Bring it to your child's doctor appointments. One .xlsx file with your milestone answers, watch list, and feeding log.");
+      setHTML("#cek .sec-head p", "Answer <b>Yes</b>, <b>Not sure</b>, or <b>Not yet</b> for each item at your child's checkpoint.");
+      setHTML("#cek details.why p", "CDC milestones are things most children (75% or more) can do by a certain age — so one “Not yet” is a prompt to practice and keep watching, not a grade. Checkpoints follow the CDC's “Learn the Signs. Act Early.” lists.");
+      setText("#cek .tool-head h3", "");
+      var cekH3 = document.querySelector("#cek .tool-head h3");
+      if(cekH3){ cekH3.innerHTML = "<i data-lucide=\"clipboard-check\" class=\"icon\"></i>Checkpoint: <span id=\"cek-usia-label\">18 months</span>"; }
+      setHTML("#redflag-box p", "If any sign above matches your child, that's not a diagnosis — it's a reason to book a developmental screening with your child's doctor or local early intervention services. One sign applies at every age: <b>losing skills your child once had</b>.");
+      setHTML("#cek .disclaimer", "This self-check is a monitoring tool, not a diagnosis or a standardized screening. Every child develops within a normal range. What you do next is your decision as a parent — when in doubt, ask your pediatrician.");
+      var rfH = document.querySelector("#redflag-box h4");
+      if(rfH) rfH.innerHTML = "<i data-lucide=\"flag\" class=\"icon\"></i>Signs to act on (CDC)";
+      setHTML("#pendidikan .sec-head p", "Activities matched to the age band, done <b>together with a parent, screen-free</b>, in just 5–10 minutes. Pick the band below.");
+      setHTML("#pendidikan details.why p", "Ages 1–2 and 2–3 play very differently, so the bands are kept strictly separate. Letters and written numbers are 3–6 year material — here they appear only as first exposure through real objects, never as memorization targets.");
+      setHTML("#parenting .sec-head p", "Four everyday tools: a feeding log for picky eating, a sleep calculator, a tantrum matrix, and a toilet-readiness check.");
+      setHTML("#parenting .tool-card details.learn p", "Log meals to see patterns — not to judge portions. The division of responsibility: parents decide what, when, and where; the child decides how much to eat.");
+      var rules = document.querySelectorAll("#parenting .rules li");
+      var ruleTxt = ["3 main meals + 1–2 snacks, on a regular schedule.","One meal lasts at most 30 minutes; finished or not, end it calmly.","No screens and no toys at the table.","Never force food, and never use food as a reward or punishment."];
+      rules.forEach(function(li, i){ if(!ruleTxt[i]) return; for(var cn = 0; cn < li.childNodes.length; cn++){ var nd = li.childNodes[cn]; if(nd.nodeType === 3 && nd.nodeValue.trim()){ nd.nodeValue = ruleTxt[i]; break; } } });
+      var mealBadge = document.querySelector("#parenting .tool-card .fineprint");
+      if(mealBadge) mealBadge.innerHTML = "<span class=\"badge badge-resmi\">Official guidance · AAP feeding basics</span>";
+      setHTML("#parenting .tool-card:nth-of-type(2) details.learn p", "Sleep totals follow the AASM consensus endorsed by the AAP. The bedtime window is a practical estimate many parents use — adjust to your child's sleepy signs.");
+      var tantrumLearn = document.querySelectorAll("#parenting details.learn p");
+      if(tantrumLearn[2]) tantrumLearn[2].textContent = "Tantrums at ages 1–4 are a normal part of development. What helps is positive discipline: empathy, consistent limits, and redirection — based on AAP guidance for parents.";
+      var tantrumDisc = document.querySelector("#parenting .tool-card .disclaimer");
+      if(tantrumDisc) tantrumDisc.innerHTML = "What to avoid (AAP): hitting, pinching, threatening, and shaming. <span class=\"badge badge-resmi\">Official guidance · AAP</span>";
+      var toiletLearn = document.querySelectorAll("#parenting details.learn p");
+      if(toiletLearn[3]) toiletLearn[3].innerHTML = "There is no fixed age to start — readiness signs decide, usually appearing between 18 months and about 3 years. Night-time control can come a year after daytime control, and that's normal. <span class=\"badge badge-resmi\">Official guidance · AAP</span>";
+      setText("#toilet-out", "Mark the signs you can already see to get a summary.");
+      var whoTiles = document.querySelectorAll(".who-tile p");
+      if(whoTiles[0]) whoTiles[0].innerHTML = "Total active play across the day for ages 1–4. <span class=\"badge badge-src\">WHO 2019</span>";
+      if(whoTiles[1]) whoTiles[1].innerHTML = "At age 1, screen time isn't recommended at all; less is better. <span class=\"badge badge-src\">WHO 2019</span>";
+      if(whoTiles[2]) whoTiles[2].innerHTML = "Including naps. For ages 3–4: 10–13 hours. <span class=\"badge badge-src\">WHO 2019</span>";
+      var whoBig = document.querySelectorAll(".who-tile .big");
+      if(whoBig[0]) whoBig[0].textContent = "≥180 min";
+      if(whoBig[1]) whoBig[1].textContent = "Max 1 hr";
+      if(whoBig[2]) whoBig[2].textContent = "11–14 hrs";
+      setHTML("#profil .fineprint", "Saved to your Google account &amp; synced across devices (phone and laptop). Your child's name appears in the Excel file you download.");
+      setHTML("footer .legal", "<b>Disclaimer.</b> TumbuhRata sells digital education tools based on general knowledge summarized from official guidance (CDC, WHO, AAP) in plain language. TumbuhRata is not a consultation, diagnosis, or therapy service, and does not replace developmental screening by a health professional. “Learn the Signs. Act Early.” materials are not a substitute for standardized, validated developmental screening tools. Anything parents do based on these worksheets is the parents' own responsibility. If you are concerned about your child's development, talk to your child's doctor and ask about developmental screening and local early intervention services. Don't wait. Acting early can make a real difference!");
+      var footP = document.querySelector("footer .wrap > p");
+      if(footP) footP.textContent = "TumbuhRata — milestone, learning, and parenting worksheets for ages 1–3. Built from a parent's research, for parents. Content is summarized from the public sources listed on this page; no company or third-party personal data is used.";
+      setHTML(".chat-panel .chat-note", "Ask about milestones, picky eating, tantrums, sleep, or toilet readiness. Short answers from the CDC/WHO/AAP material in this app — <b>not a diagnosis</b>. Red flag? See your pediatrician.");
+      setText("#chat-input", ""); var ci = $("chat-input"); if(ci) ci.setAttribute("placeholder", "Type your question…");
+      var fine = document.querySelector(".chat-panel .fineprint");
+      if(fine) fine.textContent = "Only your question + your child's age in months is sent — never your child's name.";
+      /* language switcher active state */
+      document.querySelectorAll(".lang-sw button").forEach(function(b){
+        var on = b.getAttribute("data-lang") === LANG;
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+        b.classList.toggle("on", on);
+      });
+      refreshIcons();
+    }
+
+    /* ================= EN: HASIL (CDC — no S/M/P) ================= */
+    function renderHasilEN(){
+      var host = $("hasil-body"); if(!host) return;
+      var items = MILESTONES[state.titik], ans = state.answers[state.titik] || {};
+      var done = Object.keys(ans).length, yes = 0, unsureIdx = [], notyetIdx = [];
+      items.forEach(function(it, i){ if(ans[i]==="Yes") yes++; else if(ans[i]==="Not sure") unsureIdx.push(i); else if(ans[i]==="Not yet") notyetIdx.push(i); });
+      var nama = state.nama ? esc(state.nama) : "your child";
+      var cpLabel = state.titik === 24 ? "24 months (2 years)" : state.titik === 36 ? "36 months (3 years)" : state.titik + " months";
+      var html = "";
+      html += '<div class="tool-card"><div class="tool-head"><h3><i data-lucide="clipboard-check" class="icon"></i>CDC milestone check — ' + cpLabel + '</h3><span class="badge badge-src">' + done + ' of ' + items.length + ' answered</span></div>';
+      if(done === 0){
+        html += '<div class="kat-banner kat-none"><div class="kat-label">No answers yet at this checkpoint</div><p>Head to the <b>Milestones</b> tab and answer the ' + items.length + ' CDC items for ' + cpLabel + '. Your results — the “Yes” count, what to watch, and a 2-week play plan — will appear here.</p></div>';
+      } else {
+        html += '<div class="kat-banner kat-s"><div class="kat-label">' + yes + ' of ' + items.length + ' milestones marked “Yes”</div><p>For ' + nama + ' at ' + cpLabel + '. CDC checklists don\'t give scores or pass/fail grades — your result is this count, plus the list of items to watch and discuss with your pediatrician. Developmental milestones are things most children (75% or more) can do by a certain age. (CDC)</p></div>';
+        if(notyetIdx.length){
+          html += '<h4 style="font-family:Nunito,sans-serif;margin:18px 0 4px">Bring this to the doctor — “Not yet”</h4><ul class="compact-list">';
+          notyetIdx.forEach(function(i){ var it = items[i]; html += '<li>' + (i+1) + '. ' + esc(it.t) + ' — ' + esc(it.d) + '</li>'; });
+          html += '</ul><p style="margin:10px 0 0;font-size:.92rem;color:var(--muted)">Talk with your child\'s doctor, teacher and/or another trusted provider. Share the checklist and any questions or concerns you might have. Ask about developmental screening. <b>Don\'t wait. Acting early can make a real difference!</b></p>';
+        }
+        if(unsureIdx.length){
+          html += '<h4 style="font-family:Nunito,sans-serif;margin:18px 0 4px">Watch over the next week or two — “Not sure”</h4><ul class="compact-list">';
+          unsureIdx.forEach(function(i){ var it = items[i]; html += '<li>' + (i+1) + '. ' + esc(it.t) + ' — ' + esc(it.d) + '</li>'; });
+          html += '</ul><p style="margin:10px 0 0;font-size:.92rem;color:var(--muted)">Watch for these milestones over the next week or two. Try some things with your child that give him/her the chance to show the milestone. If you\'re still not seeing it, talk to your child\'s doctor.</p>';
+        }
+        if(!notyetIdx.length && !unsureIdx.length && done === items.length){
+          html += '<p style="margin:14px 0 0;color:var(--muted)">Every item at this checkpoint is marked “Yes”. Keep the play going and re-check at the next checkpoint.</p>';
+        }
+        if(done < items.length){
+          html += '<p style="margin:14px 0 0;color:var(--muted)">' + (items.length - done) + ' items are still unanswered — answer them in the Milestones tab for the full picture.</p>';
+        }
+      }
+      html += '</div>';
+      /* domain profile */
+      var doms = {}, order = [];
+      items.forEach(function(it, i){ if(!doms[it.d]){ doms[it.d] = {y:0, w:0}; order.push(it.d); } if(ans[i]==="Yes") doms[it.d].y++; else if(ans[i]) doms[it.d].w++; });
+      html += '<div class="tool-card"><div class="tool-head"><h3><i data-lucide="list-checks" class="icon"></i>Domain profile — ' + cpLabel + '</h3></div><p style="color:var(--muted);margin:8px 0 4px;font-size:.92rem">“Yes” counts per CDC domain at this checkpoint. Domains with items to watch are marked as practice focus — this is a skills profile, not a label for your child.</p>';
+      order.forEach(function(d){ var v = doms[d]; var tot = items.filter(function(it){ return it.d === d; }).length; html += '<div class="dom-row"><span class="dom-name">' + esc(d) + '</span><span class="dom-count">' + v.y + ' of ' + tot + ' Yes</span>' + (v.w > 0 ? '<span class="chip-fokus">Practice focus</span>' : '') + '</div>'; });
+      html += '</div>';
+      /* lost skills + screening schedule */
+      html += '<div class="redflag"><h4><i data-lucide="flag" class="icon"></i>Lost skills matter</h4><p style="margin:0">If your child has lost skills he or she once had — words, play, movement, anything — treat that as a reason to act on its own: talk to your child\'s doctor promptly and ask about developmental screening and local early intervention services. <b>Don\'t wait. Acting early can make a real difference!</b> (CDC)</p></div>';
+      if(state.titik === 30){
+        html += '<div class="result-box"><h4>It\'s time for developmental screening!</h4><p>At 30 months, your child is due for general developmental screening as recommended for all children by the American Academy of Pediatrics. Ask the doctor at your next visit. (CDC / AAP)</p></div>';
+      }
+      html += '<div class="tool-card"><div class="tool-head"><h3><i data-lucide="notebook" class="icon"></i>About screening</h3></div><p style="margin:8px 0 0;font-size:.93rem">The AAP recommends general developmental screening with standardized tools at <b>9, 18, and 30 months</b>, and autism screening at <b>18 and 24 months</b> — or whenever there is a concern, at any age. This checklist supports that conversation; it is not itself a screening tool: “Learn the Signs. Act Early.” materials are not a substitute for standardized, validated developmental screening tools.</p></div>';
+      /* parenting summary */
+      var okMeal = 0;
+      state.meals.forEach(function(mn){ var dd = parseInt(mn.durasi,10); if(!isNaN(dd) && dd<=30 && (mn.layar==="Tidak" || mn.layar==="No")) okMeal++; });
+      var tc = 0; TOILET.forEach(function(_,i){ if(state.toilet[i]) tc++; });
+      var toiletStatus = tc>=6 ? "looks ready to start" : (tc>=3 ? "partly ready" : "not ready yet");
+      var tidurTxt = state.usiaBulan >= 25 ? "AASM/AAP reference: 10–13 hours/day. Work out a bedtime in the Sleep Calculator." : "AASM/AAP reference: 11–14 hours/day. Work out a bedtime in the Sleep Calculator.";
+      var makanTxt = state.meals.length ? state.meals.length + " meals logged · " + okMeal + " sessions ≤30 min &amp; screen-free." : "No meals logged yet. Log one session in the Parenting tab.";
+      html += '<div class="tool-card"><div class="tool-head"><h3><i data-lucide="notebook" class="icon"></i>Parenting summary — from your notes</h3></div>';
+      html += '<div class="sum-row"><i data-lucide="moon-star" class="icon"></i><div><b>Sleep</b><p>' + tidurTxt + '</p></div></div>';
+      html += '<div class="sum-row"><i data-lucide="utensils" class="icon"></i><div><b>Feeding</b><p>' + makanTxt + '</p></div></div>';
+      html += '<div class="sum-row"><i data-lucide="footprints" class="icon"></i><div><b>Toilet readiness</b><p>' + tc + ' of ' + TOILET.length + ' signs showing — ' + toiletStatus + ' (AAP).</p></div></div>';
+      html += '<div class="sum-row"><i data-lucide="heart-pulse" class="icon"></i><div><b>Tantrums</b><p>No log here — see the step-by-step matrix in the Parenting tab.</p></div></div>';
+      html += '</div>';
+      /* 2-week play plan */
+      var flagged = notyetIdx.concat(unsureIdx);
+      var planCount = 0;
+      flagged.forEach(function(i){ if(planDone[state.titik+"-"+i]) planCount++; });
+      html += '<div class="tool-card"><div class="tool-head"><h3><i data-lucide="calendar-check" class="icon"></i>Your 2-week play plan</h3><span class="badge badge-src">' + planCount + '/' + flagged.length + ' done</span></div>';
+      if(flagged.length){
+        html += '<p style="color:var(--muted);margin:8px 0 0;font-size:.92rem">Built from the items you marked “Not yet” or “Not sure” at ' + cpLabel + '. Short play, a few minutes a day — then re-check after two weeks.</p><ul class="plan-list">';
+        flagged.forEach(function(i){
+          var it = items[i], key = state.titik+"-"+i, dn = !!planDone[key];
+          html += '<li class="' + (dn ? "done-plan" : "") + '"><div class="plan-txt" style="flex:1"><b>' + esc(it.t) + ' <span class="badge badge-src">' + esc(it.d) + '</span></b><span>' + esc(it.stim) + '</span></div><button class="try-btn plan-toggle' + (dn ? " done" : "") + '" type="button" data-plan="' + key + '">' + (dn ? "Done ✓" : "Mark done") + '</button></li>';
+        });
+        html += '</ul>';
+      } else if(done === items.length && done > 0){
+        html += '<p style="margin:10px 0 0;color:var(--muted)">All items at this checkpoint are marked “Yes” — keep building skills with the play activities in the Learning tab, and get ready for the next checkpoint.</p>';
+      } else {
+        html += '<p style="margin:10px 0 0;color:var(--muted)">Your play plan is built automatically from items you mark “Not yet” or “Not sure” in the Milestones tab. Answer the checklist there first.</p>';
+      }
+      html += '</div>';
+      host.innerHTML = html;
+      host.querySelectorAll("[data-plan]").forEach(function(b){
+        b.addEventListener("click", function(){ var k = b.getAttribute("data-plan"); planDone[k] = !planDone[k]; updateDashboard(); });
+      });
+      refreshIcons();
+    }
+
+    /* ================= EN: CHAT FAQ (CDC/WHO/AAP) ================= */
+    var FAQ_EN = [
+      { k:["seizure","unconscious","not breathing","blue lips","emergency","choking"],
+        a:"This sounds like an emergency — don't wait. Call your local emergency number or go to the nearest emergency department now. TumbuhRata can't assess urgent conditions." },
+      { k:["lost skill","lost skills","regression","stopped talking","used to say","used to do"],
+        a:"This one matters most: if your child has lost skills they once had — at any age — the CDC says don't wait. Talk to your child's doctor promptly, share exactly what changed, and ask about developmental screening and local early intervention services. Acting early can make a real difference. (CDC)" },
+      { k:["not talking","no words","few words","speech","talk","language","words"],
+        a:"By the CDC checklist: at 18 months most children (75%+) try to say three or more words besides “mama” or “dada”; at 24 months, at least two words together (“More milk”); at 30 months, about 50 words. Check your child's checkpoint in the Milestones tab and mark honestly — then bring the Results list to your pediatrician. Meanwhile: name things all day, read together daily, and repeat your child's attempts back slightly expanded. (CDC)" },
+      { k:["walk","walking","not walking"],
+        a:"CDC movement milestones: pulling up to stand and walking while holding furniture at 12 months; a few steps alone at 15 months; walking without holding on at 18 months. If your child isn't walking independently by around 18 months, or loses the skill, raise it with your pediatrician promptly and ask about developmental screening. (CDC)" },
+      { k:["tantrum","meltdown","screaming","crying"],
+        a:"Most tantrums at 1–3 have a findable trigger: a “no” being tested, tiredness or hunger, a task that's just too hard, a sudden transition, wanting to do it herself, or plain overstimulation. The Parenting tab's tantrum matrix matches each situation to what to try. The through-line from AAP guidance: stay close and calm, name the feeling, hold the limit kindly, and don't hand over what the tantrum was demanding. (AAP)" },
+      { k:["picky","eat","eating","food","meal","spoon","refuse"],
+        a:"Picky phases are normal at this age — appetite swings with growth. What helps (AAP-aligned): offer refused foods again in tiny, no-pressure portions next to foods your child already likes, eat together when you can, and keep mealtimes short and calm. The Feeding log in the Parenting tab shows you the real pattern over a week — “tasted it” three times is progress. (AAP)" },
+      { k:["sleep","bedtime","nap","wake"],
+        a:"Recommended totals (AASM, endorsed by the AAP): ages 1–2 need 11–14 hours per 24 hours including naps; ages 3–5 need 10–13 hours. Try the Sleep calculator in the Parenting tab — enter wake-up time and nap length and it works out a bedtime window. (AASM / AAP)" },
+      { k:["toilet","potty","diaper","training"],
+        a:"Readiness matters more than age (AAP): staying dry 2+ hours, waking dry from naps, signaling before or after going, interest in the potty, pulling pants up and down, and being bothered by dirty diapers. Most children show these signs between 18 months and 3 years. The Toilet-readiness check in the Parenting tab scores all 8 signs in a minute. (AAP)" },
+      { k:["screen","screening","doctor","pediatrician","checkup","diagnos"],
+        a:"TumbuhRata's checklists help you observe and keep notes — they are not a diagnosis or a formal screening. The AAP recommends standardized developmental screening at 9, 18, and 30 months, plus autism screening at 18 and 24 months, or at any age when there's a concern. Your Results tab is designed to take into that appointment. (AAP)" },
+      { k:["milestone","behind","late","delay","concern","worried"],
+        a:"Start with the CDC definition: milestones are things most children (75% or more) can do by a certain age — checkpoints here are 12, 15, 18, 24, 30, and 36 months. Answer your child's checkpoint honestly (Yes / Not sure / Not yet) in the Milestones tab. “Not sure” items: watch them in play over the next week or two. “Not yet” items or any worry: talk to your child's doctor and ask about developmental screening. In the CDC's words: “Don't wait. Acting early can make a real difference!” (CDC)" },
+      { k:["play","activit","stimulat","games","toys"],
+        a:"The Learning tab has 16 activities — 8 for ages 1–2 and 8 for ages 2–3 — all using things already at home, each tagged with the skill it builds. Even better: answer a milestone checklist first, and the Results tab builds you a 2-week play plan aimed at exactly the items you marked “Not yet” or “Not sure.” (CDC)" },
+      { k:["price","cost","buy","gumroad","basic","complete","code","redeem"],
+        a:"Basic is $9 one-time (one category — Milestones, Learning, or Parenting — for all ages 1–3). Complete is $12 one-time (all three categories). No subscriptions. You buy on Gumroad (kingocad.gumroad.com), get a redeem code in your receipt email, sign in here with Google, and enter the code once to unlock your plan." },
+      { k:["export","excel","download","print"],
+        a:"In the app, open the Results tab and use the download button. You'll get a spreadsheet with every checkpoint you've answered, the CDC item wording, your answers, and practice ideas — made to bring to pediatrician appointments." },
+      { k:["source","cdc","who","aap","trust"],
+        a:"Every item is source-labeled. Milestones are the CDC's “Learn the Signs. Act Early.” checklists (revised Feb 2022 with the AAP), in the CDC's own wording. Sleep ranges are the AASM consensus endorsed by the AAP. Tantrum and toilet guidance follow AAP parent guidance. Full links are in the “Where does the content come from?” section of the overview page." },
+      { k:["hello","hi","hey"],
+        a:"Hello! Ask me about milestones (“my 20-month-old has few words”), everyday struggles (tantrums, picky eating, sleep, potty readiness), or how the tools work. I answer from CDC, WHO, and AAP guidance — and I'm not a diagnosis, so anything worrying goes to your pediatrician too." }
+    ];
+
+    function computeHasilEN(){
+      var items = MILESTONES[state.titik], ans = state.answers[state.titik] || {};
+      var done = Object.keys(ans).length, yes = 0, belumList = [];
+      items.forEach(function(it, i){ if(ans[i] === "Yes") yes++; else if(ans[i] === "Not yet" || ans[i] === "Not sure") belumList.push(it); });
+      var doms = {};
+      items.forEach(function(it, i){ if(!doms[it.d]) doms[it.d] = {s:0, b:0}; if(ans[i] === "Yes") doms[it.d].s++; else if(ans[i]) doms[it.d].b++; });
+      var okMeal = 0; state.meals.forEach(function(mn){ var dd = parseInt(mn.durasi,10); if(!isNaN(dd) && dd <= 30 && (mn.layar === "Tidak" || mn.layar === "No")) okMeal++; });
+      var tc = 0; TOILET.forEach(function(_, i){ if(state.toilet[i]) tc++; });
+      var toiletStatus = tc >= 6 ? "looks ready to start" : (tc >= 3 ? "partly ready" : "not ready yet");
+      return { items: items, done: done, sudah: yes, belumList: belumList, katKode: "", katLabel: yes + " of " + items.length + " milestones marked Yes", katNote: "CDC checklists have no pass/fail grade. Discuss any \u201cNot yet\u201d items with your pediatrician and ask about developmental screening.", doms: doms,
+        parenting: [["Sleep", state.usiaBulan >= 25 ? "AASM/AAP reference: 10–13 hours/day (ages 3–5), including naps." : "AASM/AAP reference: 11–14 hours/day (ages 1–2), including naps."], ["Feeding", state.meals.length + " meals logged; " + okMeal + " sessions ≤30 min & screen-free."], ["Toilet readiness", tc + " of " + TOILET.length + " signs showing — " + toiletStatus + " (AAP)."]] };
+    }
+    function applyGateEn(){
+      if(LANG !== "en") return;
+      var ri = $("redeem-input"); if(ri) ri.setAttribute("placeholder", "e.g. TR-AB12-CD34");
+      var fn = $("f-nama"); if(fn) fn.setAttribute("placeholder", "e.g. Mia");
+      var mm = $("meal-menu"); if(mm) mm.setAttribute("placeholder", "e.g. rice, chicken, spinach");
+      var mc = $("meal-catatan"); if(mc) mc.setAttribute("placeholder", "e.g. wanted to hold the spoon");
+      var slow = document.querySelector("#gate-slow .gate-status");
+      if(slow) slow.textContent = "Slow connection — the access check is taking a while. Check your signal, then try again.";
+      var hasilH = document.querySelector("#hasil .sec-head h2"); if(hasilH) hasilH.textContent = "Results & Recommendations";
+      var cekLabel = $("cek-usia-label"); if(cekLabel && state) cekLabel.textContent = state.titik + " months";
+      var learnPs = document.querySelectorAll("#parenting details.learn p");
+      if(learnPs[1]) learnPs[1].innerHTML = "Sleep totals follow the AASM consensus endorsed by the AAP (11–14 hours at ages 1–2; 10–13 hours at ages 3–5, naps included). The bedtime window above is a practical estimate many parents use — adjust to your child\u2019s sleepy signs.";
+    }
+
     /* ================= STATE (sesi ini saja) ================= */
     var state = { nama:"", usiaBulan:18, titik:18, answers:{}, eduPhase:"a", eduDone:{}, meals:[], toilet:{} };
     AGE_POINTS.forEach(function(p){ state.answers[p]={}; });
@@ -1194,7 +2010,7 @@
 
     /* ================= PROFIL ================= */
     var usiaSel = $("f-usia");
-    for(var m=12;m<=36;m++){ var o=document.createElement("option"); o.value=m; o.textContent=m+" bulan"; usiaSel.appendChild(o); }
+    for(var m=12;m<=36;m++){ var o=document.createElement("option"); o.value=m; o.textContent=m+(LANG==="en" ? " months" : " bulan"); usiaSel.appendChild(o); }
     usiaSel.value="18";
     $("f-nama").addEventListener("input", function(){ state.nama=this.value.trim(); if(window.__trScheduleSync) window.__trScheduleSync(); });
     usiaSel.addEventListener("change", function(){
@@ -1209,7 +2025,7 @@
     function renderAgePills(){
       var w=$("age-pills"); w.innerHTML="";
       AGE_POINTS.forEach(function(p){
-        var b=document.createElement("button"); b.className="age-pill"; b.textContent=p+" bulan";
+        var b=document.createElement("button"); b.className="age-pill"; b.textContent=p+(LANG==="en" ? " months" : " bulan");
         b.setAttribute("aria-pressed", p===state.titik ? "true":"false");
         b.addEventListener("click", function(){ state.titik=p; renderMilestones(); });
         w.appendChild(b);
@@ -1217,9 +2033,10 @@
     }
     function renderMilestones(){
       renderAgePills();
-      $("cek-usia-label").textContent = state.titik+" bulan";
-      var items=MILESTONES[state.titik], list=$("m-list"); list.innerHTML="";
+      $("cek-usia-label").textContent = state.titik+(LANG==="en" ? " months" : " bulan");
+      var items=MILESTONES[state.titik], list=$("m-list"); list.innerHTML=""; var prevDom=null;
       items.forEach(function(it, idx){
+        if(LANG==="en" && it.d!==prevDom){ prevDom=it.d; var dh=document.createElement("div"); dh.className="m-dom-head"; dh.textContent=it.d; list.appendChild(dh); }
         var row=document.createElement("div"); row.className="m-item";
         var main=document.createElement("div"); main.className="m-main";
         var txt=document.createElement("div"); txt.className="m-txt"; txt.textContent=it.t;
@@ -1229,10 +2046,10 @@
         main.appendChild(txt); main.appendChild(tags);
         var seg=document.createElement("div"); seg.className="seg";
         seg.setAttribute("role","group"); seg.setAttribute("aria-label", it.t);
-        ["Sudah","Belum"].forEach(function(v){
+        (LANG==="en" ? ["Yes","Not sure","Not yet"] : ["Sudah","Belum"]).forEach(function(v){
           var b=document.createElement("button"); b.type="button"; b.textContent=v;
           var cur=state.answers[state.titik][idx];
-          if(cur===v) b.className = v==="Sudah" ? "on-ya":"on-belum";
+          if(cur===v) b.className = (v==="Sudah"||v==="Yes") ? "on-ya" : (v==="Not sure" ? "on-unsure" : "on-belum");
           b.setAttribute("aria-pressed", cur===v ? "true":"false");
           b.addEventListener("click", function(){ state.answers[state.titik][idx]=v; renderMilestones(); });
           seg.appendChild(b);
@@ -1242,21 +2059,25 @@
       // counter + hasil
       var ans=state.answers[state.titik];
       var done=Object.keys(ans).length, sudah=0;
-      Object.keys(ans).forEach(function(k){ if(ans[k]==="Sudah") sudah++; });
-      $("cek-counter").textContent = done+" dari "+items.length+" terjawab";
+      Object.keys(ans).forEach(function(k){ if(ans[k]==="Sudah"||ans[k]==="Yes") sudah++; });
+      $("cek-counter").textContent = LANG==="en" ? (done+" of "+items.length+" answered") : (done+" dari "+items.length+" terjawab");
       var res=$("m-result");
       if(done>0){
         res.hidden=false;
-        $("m-result-title").textContent = "Hasil titik "+state.titik+" bulan: "+sudah+" sudah, "+(done-sudah)+" belum, "+(items.length-done)+" belum dijawab";
-        $("m-result-text").textContent = done===items.length
+        $("m-result-title").textContent = LANG==="en" ? ("Checkpoint "+state.titik+" months: "+sudah+" Yes, "+(done-sudah)+" to watch, "+(items.length-done)+" unanswered") : ("Hasil titik "+state.titik+" bulan: "+sudah+" sudah, "+(done-sudah)+" belum, "+(items.length-done)+" belum dijawab");
+        $("m-result-text").textContent = LANG==="en"
+          ? (done===items.length
+            ? (sudah===items.length ? "Every item at this checkpoint is marked Yes. Keep the daily play going and re-check at the next checkpoint." : "For items to watch, try the practice ideas below in everyday play — then re-check in 1–2 months. Remember the CDC definition: milestones are things 75% or more of children can do by this age, and some healthy children reach them at the later end of the normal range.")
+            : "Answer every item for the full summary. Meanwhile, practice ideas for watched items appear below.")
+          : (done===items.length
           ? (sudah===items.length ? "Semua butir pada titik usia ini sudah tampak. Lanjutkan stimulasi lewat bermain harian dan ulangi cek pada titik usia berikutnya." : "Untuk butir yang “belum”, coba ide stimulasi di bawah ini secara rutin lewat bermain — lalu cek lagi dalam 1–2 bulan. Ingat, definisi CDC berarti ≥75% anak sudah bisa; sebagian anak sehat mencapai milestone di ujung akhir rentang normalnya.")
-          : "Jawab semua butir untuk ringkasan yang utuh. Sementara, ide stimulasi untuk butir “belum” tampil di bawah.";
+          : "Jawab semua butir untuk ringkasan yang utuh. Sementara, ide stimulasi untuk butir “belum” tampil di bawah.");
         var sl=$("stim-list"); sl.innerHTML="";
         items.forEach(function(it, idx){
-          if(ans[idx]==="Belum"){
+          if(ans[idx]==="Belum" || ans[idx]==="Not yet" || ans[idx]==="Not sure"){
             var li=document.createElement("li");
             var b=document.createElement("b"); b.textContent=it.t;
-            var s=document.createElement("span"); s.textContent="Ide stimulasi: "+it.stim;
+            var s=document.createElement("span"); s.textContent=(LANG==="en" ? "Practice idea: " : "Ide stimulasi: ")+it.stim;
             li.appendChild(b); li.appendChild(s); sl.appendChild(li);
           }
         });
@@ -1266,7 +2087,7 @@
       RED_FLAGS.filter(function(f){ return state.titik>=f.max; }).forEach(function(f){
         var li=document.createElement("li"); li.textContent=f.t; rf.appendChild(li);
       });
-      if(!rf.children.length){ var li2=document.createElement("li"); li2.textContent="Pada titik usia ini belum ada ambang tanda bahaya IDAI yang terlewati — tetap pantau daftar lengkapnya di titik usia berikutnya."; rf.appendChild(li2); }
+      if(!rf.children.length){ var li2=document.createElement("li"); li2.textContent = LANG==="en" ? "No checkpoint-specific warning threshold has been passed at this checkpoint — keep watching the full list at the next checkpoint. One rule applies at every age: losing skills your child once had is always a reason to act." : "Pada titik usia ini belum ada ambang tanda bahaya IDAI yang terlewati — tetap pantau daftar lengkapnya di titik usia berikutnya."; rf.appendChild(li2); }
       updateDashboard(); refreshIcons();
     }
 
@@ -1320,28 +2141,28 @@
       EDU[ph].items.forEach(function(it, i){
         var key=ph+i, done=state.eduDone[key];
         var card=document.createElement("div"); card.className="act";
-        var art=document.createElement("div"); art.className="art"; art.setAttribute("role","img"); art.setAttribute("aria-label", ACT_ALT[key]||("Ilustrasi contoh: "+it.t)); art.innerHTML=ACT_ART[key]||"";
+        var art=document.createElement("div"); art.className="art"; art.setAttribute("role","img"); art.setAttribute("aria-label", LANG==="en" ? ("Illustration: "+it.t) : (ACT_ALT[key]||("Ilustrasi contoh: "+it.t))); art.innerHTML=ACT_ART[key]||"";
         var body=document.createElement("div"); body.className="act-body";
         var h=document.createElement("h4"); h.textContent=it.t;
         var p=document.createElement("p"); p.textContent=it.d;
-        var al=document.createElement("p"); al.className="alat"; al.textContent="Alat: "+it.alat;
+        var al=document.createElement("p"); al.className="alat"; al.textContent=(LANG==="en" ? "You need: " : "Alat: ")+it.alat;
         body.appendChild(h); body.appendChild(p); body.appendChild(al);
-        var btn=document.createElement("button"); btn.className="try-btn"+(done?" done":""); btn.textContent=done?"Sudah dicoba ✓":"Tandai dicoba";
+        var btn=document.createElement("button"); btn.className="try-btn"+(done?" done":""); btn.textContent = LANG==="en" ? (done?"Tried it ✓":"Mark as tried") : (done?"Sudah dicoba ✓":"Tandai dicoba");
         btn.addEventListener("click", function(){ state.eduDone[key]=!state.eduDone[key]; renderActivities(); });
         card.appendChild(art); card.appendChild(body); card.appendChild(btn); grid.appendChild(card);
       });
       var c=0; Object.keys(state.eduDone).forEach(function(k){ if(state.eduDone[k]) c++; });
-      $("edu-counter").textContent=c+" aktivitas ditandai (kedua fase)";
+      $("edu-counter").textContent = LANG==="en" ? (c+" activities marked (both age bands)") : (c+" aktivitas ditandai (kedua fase)");
       updateDashboard();
     }
 
     /* ================= LOG MAKAN ================= */
     function renderMeals(){
       var w=$("meal-list-wrap");
-      if(!state.meals.length){ w.innerHTML='<p class="empty-note">Log masih kosong. Tambahkan sesi makan pertama lewat formulir di atas — log ini ikut masuk ke file Excel.</p>'; updateDashboard(); return; }
-      var html='<table class="log"><thead><tr><th>Waktu</th><th>Menu</th><th>Porsi</th><th>Durasi</th><th>Layar</th><th></th></tr></thead><tbody>';
+      if(!state.meals.length){ w.innerHTML = LANG==="en" ? '<p class="empty-note">The log is still empty. Add your first meal with the form above — this log is included in the Excel file.</p>' : '<p class="empty-note">Log masih kosong. Tambahkan sesi makan pertama lewat formulir di atas — log ini ikut masuk ke file Excel.</p>'; updateDashboard(); return; }
+      var html = LANG==="en" ? '<table class="log"><thead><tr><th>Meal</th><th>Menu</th><th>Portion</th><th>Duration</th><th>Screen</th><th></th></tr></thead><tbody>' : '<table class="log"><thead><tr><th>Waktu</th><th>Menu</th><th>Porsi</th><th>Durasi</th><th>Layar</th><th></th></tr></thead><tbody>';
       state.meals.forEach(function(mn, i){
-        html+="<tr><td>"+mn.waktu+"</td><td>"+mn.menu+"</td><td>"+mn.porsi+"</td><td>"+(mn.durasi?mn.durasi+" mnt":"—")+"</td><td>"+mn.layar+"</td><td><button class='try-btn' data-del='"+i+"' aria-label='Hapus baris'>Hapus</button></td></tr>";
+        html+="<tr><td>"+mn.waktu+"</td><td>"+mn.menu+"</td><td>"+mn.porsi+"</td><td>"+(mn.durasi?mn.durasi+(LANG==="en"?" min":" mnt"):"—")+"</td><td>"+mn.layar+"</td><td><button class='try-btn' data-del='"+i+"' aria-label='"+(LANG==="en"?"Delete row":"Hapus baris")+"'>"+(LANG==="en"?"Delete":"Hapus")+"</button></td></tr>";
       });
       html+="</tbody></table>";
       w.innerHTML=html;
@@ -1352,10 +2173,10 @@
     $("meal-form").addEventListener("submit", function(e){
       e.preventDefault();
       var menu=$("meal-menu").value.trim();
-      if(!menu){ toast("Isi menu dulu ya, supaya log-nya berguna."); $("meal-menu").focus(); return; }
+      if(!menu){ toast(LANG==="en" ? "Add the menu first, so the log stays useful." : "Isi menu dulu ya, supaya log-nya berguna."); $("meal-menu").focus(); return; }
       state.meals.push({ waktu:$("meal-waktu").value, menu:esc(menu), porsi:$("meal-porsi").value, durasi:$("meal-durasi").value, layar:$("meal-layar").value, catatan:esc($("meal-catatan").value.trim()) });
       $("meal-menu").value=""; $("meal-durasi").value=""; $("meal-catatan").value="";
-      renderMeals(); toast("Sesi makan ditambahkan ke log.");
+      renderMeals(); toast(LANG==="en" ? "Meal added to the log." : "Sesi makan ditambahkan ke log.");
     });
 
     /* ================= TANTRUM ================= */
@@ -1372,6 +2193,19 @@
     /* ================= TIDUR ================= */
     function fmtTime(mins){ mins=((mins%1440)+1440)%1440; var h=Math.floor(mins/60), m2=mins%60; return String(h).padStart(2,"0")+"."+String(m2).padStart(2,"0"); }
     function calcSleep(){
+      if(LANG==="en"){
+        var vv=$("sleep-bangun").value||"06:30"; var pp=vv.split(":"); var wk=parseInt(pp[0],10)*60+parseInt(pp[1],10);
+        var bd=$("sleep-usia").value, tT, nT, niT, bT, wT;
+        if(bd==="a"){ tT="11–14 hours"; nT="±1–3 hours"; niT="about 9–11 hours"; bT=fmtTime(wk-11*60).replace(".",":")+" – "+fmtTime(wk-9*60).replace(".",":"); wT="about 4–6 hours (the longest awake stretch is usually before night sleep)"; }
+        else { tT="10–13 hours"; nT="0–2 hours"; niT="about 10–11 hours"; bT=fmtTime(wk-11*60).replace(".",":")+" – "+fmtTime(wk-10*60).replace(".",":"); wT="about 5–7 hours"; }
+        $("sleep-out").innerHTML="<div class='sleep-rows'>"
+          +"<div class='sleep-row'><span>Night sleep starts</span><b>"+bT+"</b></div>"
+          +"<div class='sleep-row'><span>Total sleep / day</span><b>"+tT+"</b></div>"
+          +"<div class='sleep-row'><span>Daytime naps</span><b>"+nT+"</b></div>"
+          +"</div><p style='margin:10px 0 0;font-size:.88rem'>From a "+vv+" wake-up: night sleep "+niT+"; last wake window <b>"+wT+"</b>. Totals follow the <span class='badge badge-resmi'>AASM / AAP</span> consensus (naps included).</p>";
+        refreshIcons();
+        return;
+      }
       var v=$("sleep-bangun").value||"06:30"; var parts=v.split(":"); var wake=parseInt(parts[0],10)*60+parseInt(parts[1],10);
       var band=$("sleep-usia").value;
       var totalTxt, napTxt, nightTxt, bedTxt, wwTxt;
@@ -1392,17 +2226,17 @@
       var w=$("toilet-list"); w.innerHTML="";
       TOILET.forEach(function(t, i){
         var row=document.createElement("div"); row.className="check-row";
-        var btn=document.createElement("button"); btn.className="try-btn"+(state.toilet[i]?" done":""); btn.textContent=state.toilet[i]?"Tampak ✓":"Belum";
+        var btn=document.createElement("button"); btn.className="try-btn"+(state.toilet[i]?" done":""); btn.textContent = LANG==="en" ? (state.toilet[i]?"Showing ✓":"Not yet") : (state.toilet[i]?"Tampak ✓":"Belum");
         btn.addEventListener("click", function(){ state.toilet[i]=!state.toilet[i]; renderToilet(); });
         var p=document.createElement("div"); p.style.flex="1"; p.textContent=t;
         row.appendChild(p); row.appendChild(btn); w.appendChild(row);
       });
       var c=0; TOILET.forEach(function(_,i){ if(state.toilet[i]) c++; });
-      $("toilet-counter").textContent=c+" dari 6 tanda";
+      $("toilet-counter").textContent = LANG==="en" ? (c+" of "+TOILET.length+" signs") : (c+" dari 6 tanda");
       var out=$("toilet-out");
-      if(c>=5) out.innerHTML="<b>Tampaknya sudah siap mulai.</b> Perkenalkan toilet/potty secara bertahap dan tanpa paksaan; mulai dari duduk berpakaian, dan rayakan usaha anak, bukan hasilnya.";
-      else if(c>=3) out.innerHTML="<b>Mulai mendekati siap.</b> Perkenalkan konsepnya dulu: ajak anak melihat, sebutkan kata pipis/pup dalam keseharian, dan biarkan minatnya tumbuh.";
-      else out.innerHTML="<b>Belum perlu terburu-buru.</b> Kesiapan umumnya muncul di 18 bulan–2,5/3 tahun; memaksa mulai terlalu dini justru sering membuat prosesnya lebih lama. Pantau lagi tanda-tandanya bulan depan.";
+      if(c>=5) out.innerHTML = LANG==="en" ? "<b>Looks ready to start.</b> Introduce the toilet/potty gradually and without pressure; start with sitting fully clothed, and celebrate effort, not results." : "<b>Tampaknya sudah siap mulai.</b> Perkenalkan toilet/potty secara bertahap dan tanpa paksaan; mulai dari duduk berpakaian, dan rayakan usaha anak, bukan hasilnya.";
+      else if(c>=3) out.innerHTML = LANG==="en" ? "<b>Getting close.</b> Introduce the idea first: let your child watch, use your family words for pee/poop in everyday talk, and let interest grow." : "<b>Mulai mendekati siap.</b> Perkenalkan konsepnya dulu: ajak anak melihat, sebutkan kata pipis/pup dalam keseharian, dan biarkan minatnya tumbuh.";
+      else out.innerHTML = LANG==="en" ? "<b>No rush.</b> Readiness usually appears between 18 months and about 3 years; forcing an early start often makes the process longer. Check the signs again next month." : "<b>Belum perlu terburu-buru.</b> Kesiapan umumnya muncul di 18 bulan–2,5/3 tahun; memaksa mulai terlalu dini justru sering membuat prosesnya lebih lama. Pantau lagi tanda-tandanya bulan depan.";
       updateDashboard();
     }
 
@@ -1419,6 +2253,7 @@
 
     /* Ringkasan hasil skrining — dipakai sheet "Hasil" (logika sama dengan tab Hasil) */
     function computeHasil(){
+      if(LANG==="en") return computeHasilEN();
       var items=MILESTONES[state.titik], ans=state.answers[state.titik]||{};
       var done=Object.keys(ans).length, sudah=0, belumList=[];
       items.forEach(function(it,i){ if(ans[i]==="Sudah") sudah++; else if(ans[i]==="Belum") belumList.push(it); });
@@ -1439,14 +2274,14 @@
         parenting:[["Tidur", tidur],["Makan", state.meals.length+" sesi tercatat; "+okMeal+" sesi ≤30 menit & tanpa layar (aturan IDAI)."],["Toilet training", tc+" dari 6 tanda tampak — "+toiletStatus+" (IDAI)."]] };
     }
     function hasilAOA(H){
-      var hs=[["Hasil Skrining (KPSP) — titik "+state.titik+" bulan"],["Kategori", H.katLabel],["Skor", H.sudah+" dari "+H.items.length+" butir “Sudah”"],["Tindak lanjut", H.katNote],[],["Profil per ranah"],["Ranah","Sudah · Belum"]];
-      DOMAIN_ORDER.forEach(function(d){ var v=H.doms[d]; hs.push([d, v.s+" · "+v.b+(v.b>0?" — fokus stimulasi":"")]); });
-      hs.push([]); hs.push(["Ringkasan parenting"]);
+      var hs=[[(LANG==="en" ? "CDC Milestone Check — checkpoint " : "Hasil Skrining (KPSP) — titik ")+state.titik+(LANG==="en" ? " months" : " bulan")],[LANG==="en" ? "Result" : "Kategori", H.katLabel],[LANG==="en" ? "Score" : "Skor", H.sudah+" dari "+H.items.length+(LANG==="en" ? " milestones marked Yes" : " butir “Sudah”")],[LANG==="en" ? "Next step" : "Tindak lanjut", H.katNote],[],[LANG==="en" ? "Domain profile" : "Profil per ranah"],[LANG==="en" ? "Domain" : "Ranah", LANG==="en" ? "Yes · To watch" : "Sudah · Belum"]];
+      (LANG==="en" ? Object.keys(H.doms) : DOMAIN_ORDER).forEach(function(d){ var v=H.doms[d]; if(!v) return; hs.push([d, v.s+" · "+v.b+(v.b>0 ? (LANG==="en" ? " — practice focus" : " — fokus stimulasi") : "")]); });
+      hs.push([]); hs.push([LANG==="en" ? "Parenting summary" : "Ringkasan parenting"]);
       H.parenting.forEach(function(r){ hs.push(r); });
-      hs.push([]); hs.push(["Rencana stimulasi 2 minggu"]);
-      if(H.belumList.length){ hs.push(["Butir belum tercapai","Ide stimulasi"]); H.belumList.forEach(function(it){ hs.push([it.t, it.stim]); }); }
-      else hs.push(["Tidak ada butir “Belum” pada titik ini.",""]);
-      hs.push([]); hs.push(["Catatan","Hasil skrining awal — bukan diagnosis. Sumber: Kemenkes RI (SDIDTK 2022), IDAI, CDC, WHO."]);
+      hs.push([]); hs.push([LANG==="en" ? "2-week play plan" : "Rencana stimulasi 2 minggu"]);
+      if(H.belumList.length){ hs.push([LANG==="en" ? "Milestone to practice" : "Butir belum tercapai", LANG==="en" ? "Practice idea" : "Ide stimulasi"]); H.belumList.forEach(function(it){ hs.push([it.t, it.stim]); }); }
+      else hs.push([LANG==="en" ? "No items to practice at this checkpoint." : "Tidak ada butir “Belum” pada titik ini.",""]);
+      hs.push([]); hs.push(["Catatan", LANG==="en" ? "Checklist summary — not a diagnosis. Sources: CDC, WHO, AAP." : "Hasil skrining awal — bukan diagnosis. Sumber: Kemenkes RI (SDIDTK 2022), IDAI, CDC, WHO."]);
       return hs;
     }
 
@@ -1552,10 +2387,10 @@
         ["Sesi makan tercatat di log", state.meals.length],
         ["Tanda kesiapan toilet training", tc+" dari 6"],
         [],
-        ["Catatan", "Worksheet ini adalah alat pantau & pra-skrining berdasarkan panduan IDAI/Kemenkes/CDC/WHO — bukan diagnosis. Keputusan dan tindakan orang tua adalah tanggung jawab orang tua. Bila ragu, konsultasikan ke dokter anak / Posyandu / Puskesmas."]
+        ["Catatan", LANG==="en" ? "This worksheet is a monitoring tool based on CDC/WHO/AAP guidance — not a diagnosis. Parents' decisions are their own responsibility. When in doubt, talk to your child's pediatrician." : "Worksheet ini adalah alat pantau & pra-skrining berdasarkan panduan IDAI/Kemenkes/CDC/WHO — bukan diagnosis. Keputusan dan tindakan orang tua adalah tanggung jawab orang tua. Bila ragu, konsultasikan ke dokter anak / Posyandu / Puskesmas."]
       ];
-      var tk=[["No","Domain","Milestone (titik "+state.titik+" bulan)","Status","Sumber","Ide stimulasi bila belum"]];
-      MILESTONES[state.titik].forEach(function(it,i){ tk.push([i+1, it.d, it.t, ans[i]||"Belum dijawab", it.s, ans[i]==="Belum" ? it.stim : ""]); });
+      var tk = LANG==="en" ? [["No","Domain","Milestone (checkpoint "+state.titik+" months)","Answer","Source","Practice idea"]] : [["No","Domain","Milestone (titik "+state.titik+" bulan)","Status","Sumber","Ide stimulasi bila belum"]];
+      MILESTONES[state.titik].forEach(function(it,i){ tk.push([i+1, it.d, it.t, ans[i]||(LANG==="en" ? "Not answered" : "Belum dijawab"), it.s, (ans[i]==="Belum" || ans[i]==="Not yet" || ans[i]==="Not sure") ? it.stim : ""]); });
       var pd=[["Fase","No","Aktivitas","Cara main","Alat","Sudah dicoba"]];
       ["a","b"].forEach(function(ph){ EDU[ph].items.forEach(function(it,i){ pd.push([EDU[ph].label, i+1, it.t, it.d, it.alat, state.eduDone[ph+i]?"Ya":"Belum"]); }); });
       var pr=[["BAGIAN 1 — LOG MAKAN"],["Waktu","Menu","Porsi habis","Durasi (menit)","Layar saat makan","Catatan"]];
@@ -1606,7 +2441,7 @@
         r=xSectionRow(wsH, r, "Hasil Skrining (KPSP) — titik "+state.titik+" bulan", 2);
         r=xKV(wsH, r, [["Kategori", H.katLabel],["Skor", H.sudah+" dari "+H.items.length+" butir “Sudah”"],["Tindak lanjut", H.katNote]], 2, H.katKode);
         r++; r=xSectionRow(wsH, r, "Profil per ranah", 2);
-        var domAoa=[["Ranah","Sudah · Belum"]]; DOMAIN_ORDER.forEach(function(d){ var v=H.doms[d]; domAoa.push([d, v.s+" · "+v.b+(v.b>0?" — fokus stimulasi":"")]); });
+        var domAoa=[["Ranah","Sudah · Belum"]]; (LANG==="en" ? Object.keys(H.doms) : DOMAIN_ORDER).forEach(function(d){ var v=H.doms[d]; if(!v) return; domAoa.push([d, v.s+" · "+v.b+(v.b>0 ? (LANG==="en" ? " — practice focus" : " — fokus stimulasi") : "")]); });
         r=xTable(wsH, r, domAoa, null);
         r++; r=xSectionRow(wsH, r, "Ringkasan parenting", 2);
         r=xKV(wsH, r, H.parenting, 2, "");
@@ -1676,7 +2511,7 @@
     }
     function initChat(){
       if(chatStarted) return; chatStarted = true;
-      addMsg("bot", "Halo! Tanya soal milestone, GTM, tantrum, tidur, atau toilet training — jawabannya singkat, dari materi IDAI/Kemenkes/CDC/WHO di web ini.");
+      addMsg("bot", LANG==="en" ? "Hi! Ask about milestones, picky eating, tantrums, sleep, or toilet readiness — short answers from the CDC/WHO/AAP material in this app." : "Halo! Tanya soal milestone, GTM, tantrum, tidur, atau toilet training — jawabannya singkat, dari materi IDAI/Kemenkes/CDC/WHO di web ini.");
     }
     var FAQ = [
       { k:["kejang","tidak sadar","pingsan","sesak","bibir biru","tidak mau minum","muntah terus","demam tinggi","lemas sekali","dehidrasi"],
@@ -1700,6 +2535,7 @@
       { k:["milestone","perkembangan","terlambat","tumbuh kembang","red flag","tanda bahaya"],
         a:"Milestone CDC = kemampuan yang sudah bisa dilakukan ≥75% anak di usia itu, jadi satu butir “Belum” adalah penanda untuk dipantau dan distimulasi. Cek per titik usia (12–36 bulan) di tab Tumbuh Kembang. Bila banyak butir belum tercapai atau ada kemampuan yang hilang, konsultasikan ke dokter anak. (CDC, IDAI)" }
     ];
+    if(LANG==="en") FAQ = FAQ_EN;
     function localFaq(q){
       var s=" "+String(q||"").toLowerCase()+" ";
       if(FAQ[0].k.some(function(k){ return s.indexOf(k)>=0; })) return FAQ[0].a;
@@ -1709,17 +2545,17 @@
         if(sc>bestScore){ bestScore=sc; best=f; }
       });
       if(best) return best.a;
-      return "Maaf, saya hanya bisa menjawab seputar tumbuh kembang, pendidikan, dan parenting anak 1–3 tahun. Coba tanyakan soal milestone, GTM, tantrum, tidur, atau toilet training.";
+      return LANG==="en" ? "I can help with milestone questions (CDC checklists for 12–36 months), speech and walking worries, tantrums, picky eating, sleep amounts, and toilet readiness — all grounded in CDC, WHO, and AAP guidance. And remember: I'm not a diagnosis — bring concerns to your child's pediatrician." : "Maaf, saya hanya bisa menjawab seputar tumbuh kembang, pendidikan, dan parenting anak 1–3 tahun. Coba tanyakan soal milestone, GTM, tantrum, tidur, atau toilet training.";
     }
     function sendChat(text){
       text=(text||"").trim(); if(!text || chatBusy) return;
       addMsg("user", text);
       chatHistory.push({ role:"user", content:text });
       chatBusy = true;
-      var typing = addMsg("bot", "Mengetik…"); if(typing) typing.classList.add("typing");
+      var typing = addMsg("bot", LANG==="en" ? "Typing…" : "Mengetik…"); if(typing) typing.classList.add("typing");
       var req;
       try {
-        req = fetch("/api/chat", { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify({ messages: chatHistory.slice(-10), ageMonths: state.usiaBulan }) });
+        req = fetch("/api/chat", { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify({ messages: chatHistory.slice(-10), ageMonths: state.usiaBulan, lang: LANG }) });
       } catch(e){ req = Promise.reject(e); }
       req
         .then(function(r){ if(!r.ok) throw new Error("http"); return r.json(); })
@@ -1727,13 +2563,13 @@
           var ans = d && (d.reply || d.answer || d.text || d.message);
           if(!ans) throw new Error("empty");
           if(typing) typing.remove();
-          addMsg("bot", String(ans), "Jawaban AI");
+          addMsg("bot", String(ans), LANG==="en" ? "AI answer" : "Jawaban AI");
           chatHistory.push({ role:"assistant", content:String(ans) });
         })
         .catch(function(){
           if(typing) typing.remove();
           var ans = localFaq(text);
-          addMsg("bot", ans, "Jawaban lokal");
+          addMsg("bot", ans, LANG==="en" ? "Local answer" : "Jawaban lokal");
           chatHistory.push({ role:"assistant", content:ans });
         })
         .then(function(){ chatBusy = false; chatScroll(); });
@@ -1844,6 +2680,7 @@
     var DOMAIN_ORDER = ["Gerak kasar","Gerak halus","Bicara & bahasa","Sosialisasi & kemandirian","Kognitif"];
     var planDone = {};
     function renderHasil(){
+      if(LANG==="en"){ renderHasilEN(); return; }
       var host = $("hasil-body"); if(!host) return;
       var items = MILESTONES[state.titik], ans = state.answers[state.titik] || {};
       var done = Object.keys(ans).length, sudah = 0, belumIdx = [];
@@ -1945,6 +2782,8 @@
     }
 
     /* ================= INIT ================= */
+    if(LANG==="en"){ var li0=$("landing"); if(li0) li0.hidden=true; var le0=$("landing-en"); if(le0) le0.hidden=false; }
+    applyI18n(); applyGateEn();
     state.titik = nearestPoint(state.usiaBulan);
     renderMilestones(); renderEduTabs(); renderActivities(); renderMeals(); renderToilet(); calcSleep(); updateDashboard(); pickDefaultTab(); refreshIcons();
     </script>
@@ -1958,6 +2797,14 @@
       var cache = null;
       try { cache = JSON.parse(localStorage.getItem(CACHE_KEY) || "null"); } catch(e){ cache = null; }
       if(!cache || typeof cache !== "object") cache = {};
+      var progressSlots = { id: null, en: null };
+      function slotLang(){ return window.__trLang === "en" ? "en" : "id"; }
+      function pickSlot(p){
+        if(!p) return null;
+        if(p.id || p.en){ progressSlots.id = p.id || null; progressSlots.en = p.en || null; return progressSlots[slotLang()]; }
+        progressSlots.id = p; /* format lama (v1.x): objek progres datar = slot ID */
+        return slotLang() === "id" ? p : null;
+      }
 
       function setStatus(id, msg, isErr){
         var el = $(id); if(!el) return;
@@ -1970,7 +2817,7 @@
         /* Gerbang selalu tampil sebagai overlay penuh; landing disembunyikan. */
         var gate = $("gate"); if(gate){ gate.hidden = false; gate.style.display = ""; }
         document.body.classList.add("gate-locked");
-        var land = $("landing"); if(land) land.hidden = true;
+        document.querySelectorAll(".landing-view").forEach(function(el){ el.hidden = true; });
         ["loading","login","redeem","cat"].forEach(function(s){
           var el = $("gate-step-" + s); if(el) el.hidden = (s !== name);
         });
@@ -1993,7 +2840,7 @@
         document.body.classList.remove("gate-locked");
         var app = $("app"); if(app) app.hidden = true;
         var fab = $("chat-fab"); if(fab) fab.hidden = true;
-        var land = $("landing"); if(land) land.hidden = false;
+        document.querySelectorAll(".landing-view").forEach(function(el){ el.hidden = el.id !== (window.__trLang === "en" ? "landing-en" : "landing"); });
         refreshIcons();
       }
       function openGateLogin(){
@@ -2027,6 +2874,7 @@
           state.nama = p.nama || "";
           state.usiaBulan = p.usiaBulan || 18;
           state.titik = p.titik || nearestPoint(state.usiaBulan);
+          if(!MILESTONES[state.titik]) state.titik = nearestPoint(state.usiaBulan);
           if(p.answers) AGE_POINTS.forEach(function(pt){ state.answers[pt] = p.answers[pt] || {}; });
           state.eduPhase = p.eduPhase || "a";
           if(p.eduDone) state.eduDone = p.eduDone;
@@ -2043,7 +2891,7 @@
       window.__trScheduleSync = function(){
         if(!unlocked || suppressSync || !user || !seat) return;
         cache.uid = user.uid; cache.tier = seat.tier; cache.category = seat.category || null;
-        cache.progress = snapshot(); writeCache();
+        progressSlots[slotLang()] = snapshot(); cache.progress = progressSlots; writeCache();
         var ss = $("sync-status"); if(ss) ss.textContent = "Menyimpan…";
         clearTimeout(syncTimer);
         syncTimer = setTimeout(saveRemote, 1000);
@@ -2080,7 +2928,7 @@
             note.className = "lock-note";
             var ic = document.createElement("i"); ic.setAttribute("data-lucide", "lock"); ic.className = "icon";
             var sp = document.createElement("span");
-            sp.textContent = "Worksheet ini terkunci di paket Basic Anda (kategori aktif: " + CAT_LABELS[seat.category] + "). Paket Complete membuka ketiga worksheet.";
+            sp.textContent = window.__trLang === "en" ? ("This worksheet is locked on your Basic plan (active category: " + ({kembang:"Milestones", pendidikan:"Learning", parenting:"Parenting"}[seat.category] || seat.category) + "). The Complete plan opens all three worksheets.") : ("Worksheet ini terkunci di paket Basic Anda (kategori aktif: " + CAT_LABELS[seat.category] + "). Paket Complete membuka ketiga worksheet.");
             note.appendChild(ic); note.appendChild(sp);
             var wrap = sec.querySelector(".wrap");
             wrap.insertBefore(note, wrap.firstChild);
@@ -2103,11 +2951,11 @@
         unlocked = true;
         var gateEl = $("gate"); if(gateEl){ gateEl.hidden = true; gateEl.style.display = ""; }
         document.body.classList.remove("gate-locked");
-        var land = $("landing"); if(land) land.hidden = true;
+        document.querySelectorAll(".landing-view").forEach(function(el){ el.hidden = true; });
         $("app").hidden = false;
         var fab = $("chat-fab"); if(fab) fab.hidden = false;
         $("acct-email").textContent = user.email || "";
-        $("acct-tier").textContent = seat.tier === "basic" ? "Paket Basic" : "Paket Complete";
+        $("acct-tier").textContent = window.__trLang === "en" ? (seat.tier === "basic" ? "Basic plan" : "Complete plan") : (seat.tier === "basic" ? "Paket Basic" : "Paket Complete");
         var ss = $("sync-status"); if(ss) ss.textContent = "Perubahan tersimpan otomatis";
         applyTierLocks();
         refreshIcons();
@@ -2126,7 +2974,7 @@
             var d = snap.data();
             if(d.tier){
               seat = { tier: d.tier, category: d.category || null, code: d.code || null };
-              if(d.progress) applyProgress(d.progress);
+              if(d.progress) applyProgress(pickSlot(d.progress));
               afterSeat();
               return;
             }
@@ -2136,7 +2984,7 @@
         }).catch(function(err){
           if(cache && cache.uid === user.uid && cache.tier){
             seat = { tier: cache.tier, category: cache.category || null };
-            if(cache.progress) applyProgress(cache.progress);
+            if(cache.progress) applyProgress(pickSlot(cache.progress));
             unlock();
             toast("Anda sedang offline — menampilkan data terakhir di perangkat ini.");
             return;
@@ -2324,6 +3172,8 @@
           return tx.get(codeRef).then(function(snap){
             if(!snap.exists) throw new Error("notfound");
             var d = snap.data();
+            var codeLang = d.lang || "id";
+            if(codeLang !== (window.__trLang || "id")) throw new Error("langmismatch");
             if(d.active === false) throw new Error("inactive");
             if(d.usedBy) throw new Error("used");
             var tier = d.tier || "complete";
@@ -2331,6 +3181,7 @@
             tx.set(userRef, {
               email: user.email || "",
               tier: tier,
+              lang: codeLang,
               code: code,
               claimedAt: firebase.firestore.FieldValue.serverTimestamp()
             }, { merge: true });
@@ -2341,14 +3192,17 @@
           seat = { tier: tier, category: null, code: code };
           setStatus("gate-status-redeem", "");
           afterSeat();
-          if(tier !== "basic") toast("Kode aktif — selamat datang di TumbuhRata Complete!");
+          if(tier !== "basic") toast(window.__trLang === "en" ? "Code active — welcome to TumbuhRata Complete!" : "Kode aktif — selamat datang di TumbuhRata Complete!");
         }).catch(function(err){
           btn.disabled = false;
           var msg;
           /* K-6: satu pesan netral untuk semua kode yang tidak bisa dipakai —
              tidak membedakan tidak ditemukan / sudah dipakai / tidak aktif,
              agar keberadaan kode tidak bisa ditebak dari pesannya. */
-          if(err.message === "notfound" || err.message === "used" || err.message === "inactive") msg = "Kode tidak dapat dipakai. Periksa lagi ejaan kodenya — satu kode hanya bisa dipakai sekali oleh satu akun. Bila belum punya kode, lihat info pembelian di bawah ini; bila kode Anda seharusnya bisa dipakai, hubungi penjual lewat profil Lynk (tautan di bawah).";
+          if(err.message === "langmismatch") msg = window.__trLang === "en"
+            ? "This code is for the Indonesian version of TumbuhRata. Switch the language to ID at the top of this page, then enter the code again — or use a code bought from the English store (Gumroad)."
+            : "Kode ini untuk versi Inggris (English) TumbuhRata. Ganti bahasa ke EN di bagian atas halaman ini, lalu masukkan lagi kodenya — atau gunakan kode dari pembelian versi Indonesia (Lynk).";
+          else if(err.message === "notfound" || err.message === "used" || err.message === "inactive") msg = window.__trLang === "en" ? "That code can't be used. Double-check the spelling — one code works once, for one account. If you don't have a code yet, see how to buy below; if your code should work, contact the seller via the Gumroad storefront (link below)." : "Kode tidak dapat dipakai. Periksa lagi ejaan kodenya — satu kode hanya bisa dipakai sekali oleh satu akun. Bila belum punya kode, lihat info pembelian di bawah ini; bila kode Anda seharusnya bisa dipakai, hubungi penjual lewat profil Lynk (tautan di bawah).";
           else msg = "Aktivasi gagal (" + (err.code || err.message) + "). Silakan coba lagi.";
           setStatus("gate-status-redeem", msg, true);
           /* Kode salah: tampilkan info pembelian + tombol Lynk di dalam
@@ -2364,7 +3218,7 @@
           seat.category = cat;
           db.collection("users").doc(user.uid).set({ category: cat }, { merge: true }).catch(function(){});
           afterSeat();
-          toast("Kategori aktif: " + CAT_LABELS[cat] + ". Selamat memakai worksheet-nya!");
+          toast(window.__trLang === "en" ? ("Active category: " + ({kembang:"Milestones", pendidikan:"Learning", parenting:"Parenting"}[cat] || cat) + ". Enjoy your worksheets!") : ("Kategori aktif: " + CAT_LABELS[cat] + ". Selamat memakai worksheet-nya!"));
         });
       });
     })();
