@@ -418,6 +418,8 @@
       .cat-btn:hover{border-color:var(--brand)}
       .cat-btn .icon{color:var(--brand)}
       .gate-note{margin-top:16px;font-size:.82rem;color:var(--muted);background:var(--surface2);border-radius:var(--r-sm);padding:11px 13px}
+      .gate-divider{display:flex;align-items:center;gap:12px;margin:22px 0 4px;color:var(--muted);font-size:.82rem;font-weight:800}
+      .gate-divider::before,.gate-divider::after{content:"";flex:1;height:1px;background:var(--line)}
       .gate-buy{margin-top:18px;background:var(--surface2);border:1px solid var(--line);border-radius:var(--r-md);padding:16px}
       .gate-buy[hidden]{display:none!important}
       .gate-buy h3{font-size:1rem;font-weight:900;margin:0}
@@ -528,12 +530,20 @@
 
         <div id="gate-step-login" hidden>
           <h2>Masuk dulu, ya</h2>
-          <p class="desc">Worksheet TumbuhRata dibuka dengan akun. Masuk pakai Google, lalu aktifkan kode redeem dari pembelian Anda — cukup sekali. Login berikutnya cukup Google saja, dan progres worksheet Anda tersimpan serta tersinkron antar perangkat.</p>
+          <p class="desc">Worksheet TumbuhRata dibuka dengan akun. Sudah punya kode redeem dari pembelian? Masukkan langsung di kolom di bawah ini — Anda akan diminta masuk dengan Google sekali untuk mengikat kode ke akun Anda. Login berikutnya cukup Google saja, dan progres worksheet Anda tersimpan serta tersinkron antar perangkat.</p>
           <button class="btn btn-google" id="btn-google" type="button"><i data-lucide="log-in" class="icon"></i>Masuk dengan Google</button>
           <button class="btn btn-ghost gate-full" id="btn-google-popup" type="button" hidden><i data-lucide="app-window" class="icon"></i>Coba lagi lewat jendela popup</button>
           <p class="fineprint" style="text-align:center;margin-top:10px">Anda akan diarahkan ke Google, lalu kembali ke sini.</p>
           <p class="gate-status" id="gate-status-login" aria-live="polite"></p>
           <div class="gate-note">Belum punya kode? <b>Basic Rp49.000</b> · <b>Complete Rp99.000</b> — sekali bayar, tanpa langganan. Kode dikirim setelah pembayaran.</div>
+          <div class="gate-divider"><span>Sudah punya kode redeem?</span></div>
+          <form id="login-redeem-form">
+            <label class="f" for="login-redeem-input">Kode redeem</label>
+            <input class="input" id="login-redeem-input" type="text" placeholder="mis. TR-AB12-CD34" autocomplete="off" inputmode="text" autocapitalize="characters" aria-describedby="login-redeem-hint gate-status-prelogin" style="text-transform:uppercase" />
+            <p class="fineprint" id="login-redeem-hint" style="margin-top:8px">Kode ada di email/WA setelah pembayaran. Masukkan kodenya di sini — Anda cukup masuk dengan Google sekali untuk mengikat kode ke akun Anda, dan kode aktif otomatis setelahnya.</p>
+            <button class="btn btn-brand gate-full" type="submit" id="btn-login-redeem"><i data-lucide="key-round" class="icon"></i>Aktifkan kode</button>
+          </form>
+          <p class="gate-status" id="gate-status-prelogin" aria-live="polite"></p>
           <div class="gate-alt"><button class="link-btn" type="button" id="btn-back-landing">Kembali ke halaman utama</button></div>
         </div>
 
@@ -1750,6 +1760,8 @@
       "Kode redeem":"Redeem code",
       "mis. TR-AB12-CD34":"e.g. TR-AB12-CD34",
       "Kode ada di email/WA setelah pembayaran.":"Your code is in the email/receipt you got after paying.",
+      "Sudah punya kode redeem?":"Already have a redeem code?",
+      "Kode ada di email/WA setelah pembayaran. Masukkan kodenya di sini — Anda cukup masuk dengan Google sekali untuk mengikat kode ke akun Anda, dan kode aktif otomatis setelahnya.":"Your code is in the email/receipt after paying. Enter it here — you sign in with Google just once to bind the code to your account, and it activates automatically.",
       "Aktifkan kode":"Activate code",
       "Info pembelian":"How to buy",
       "Keluar dari akun ini":"Sign out of this account",
@@ -1847,7 +1859,7 @@
       /* 2) targeted blocks (mixed markup) */
       function setHTML(sel, html){ var el = document.querySelector(sel); if(el) el.innerHTML = html; }
       function setText(sel, txt){ var el = document.querySelector(sel); if(el) el.textContent = txt; }
-      setHTML("#gate-step-login .desc", "TumbuhRata opens with an account. Sign in with Google, then activate the redeem code from your purchase — just once. After that, Google sign-in is enough, and your worksheet progress is saved and synced across your devices.");
+      setHTML("#gate-step-login .desc", "TumbuhRata opens with an account. Already have a redeem code from your purchase? Enter it in the field below — you'll sign in with Google once to bind the code to your account. After that, Google sign-in is enough, and your worksheet progress is saved and synced across your devices.");
       setHTML("#gate-step-login .gate-note", "No code yet? <b>Basic $9</b> · <b>Complete $12</b> — one-time payment, no subscription. Your code arrives in your Gumroad receipt email.");
       setHTML("#gate-step-redeem .desc", "You're signed in with Google. Enter the code you received after buying to unlock the worksheets. One code works for one Google account only — it will be permanently tied to <b id=\"redeem-email\"></b>.");
       setText("#redeem-hint", "Your code is in the Gumroad receipt email after checkout.");
@@ -2046,6 +2058,7 @@
     function applyGateEn(){
       if(LANG !== "en") return;
       var ri = $("redeem-input"); if(ri) ri.setAttribute("placeholder", "e.g. TR-AB12-CD34");
+      var lri = $("login-redeem-input"); if(lri) lri.setAttribute("placeholder", "e.g. TR-AB12-CD34");
       var fn = $("f-nama"); if(fn) fn.setAttribute("placeholder", "e.g. Mia");
       var mm = $("meal-menu"); if(mm) mm.setAttribute("placeholder", "e.g. rice, chicken, spinach");
       var mc = $("meal-catatan"); if(mc) mc.setAttribute("placeholder", "e.g. wanted to hold the spoon");
@@ -3337,6 +3350,13 @@
       });
       var backBtn = $("btn-back-landing");
       if(backBtn) backBtn.addEventListener("click", showLanding);
+      /* Form kode di layar login: cegah submit bawaan (muat ulang halaman)
+         bila handler utamanya belum terpasang karena SDK login gagal termuat. */
+      var lrfGuard = $("login-redeem-form");
+      if(lrfGuard) lrfGuard.addEventListener("submit", function(e){
+        e.preventDefault();
+        if(window.__trFirebaseMissing) setStatus("gate-status-prelogin", "Layanan login tidak termuat. Periksa koneksi internet Anda, lalu muat ulang halaman.", true);
+      });
       /* Klik logo: kembali ke atas; dari langkah login gerbang, kembali ke landing. */
       document.querySelectorAll(".brand-logo").forEach(function(b){
         b.addEventListener("click", function(e){
@@ -3466,6 +3486,20 @@
         unlock();
       }
 
+      /* Masuk ke layar redeem. Bila ada kode yang diketik di layar login
+         sebelum masuk Google, kode itu terisi otomatis; pada jalur normal
+         (akses akun terbaca, memang belum punya paket) kode langsung
+         diklaim tanpa ketuk tambahan. */
+      function enterRedeemStep(autoClaim){
+        $("redeem-email").textContent = user.email || "";
+        showStep("redeem");
+        var pc = pendingCodeGet();
+        if(pc){
+          var ri = $("redeem-input"); if(ri) ri.value = pc;
+          if(autoClaim) claimCode(pc);
+        }
+      }
+
       function loadSeat(){
         db.collection("users").doc(user.uid).get().then(function(snap){
           if(snap.exists){
@@ -3477,8 +3511,7 @@
               return;
             }
           }
-          $("redeem-email").textContent = user.email || "";
-          showStep("redeem");
+          enterRedeemStep(true);
         }).catch(function(err){
           if(cache && cache.uid === user.uid && cache.tier){
             seat = { tier: cache.tier, category: cache.category || null };
@@ -3488,9 +3521,9 @@
             return;
           }
           /* Sudah login tapi akses belum terbaca: tetap di layar redeem
-             (keadaan b), jangan lempar kembali ke login atau landing. */
-          $("redeem-email").textContent = user.email || "";
-          showStep("redeem");
+             (keadaan b), jangan lempar kembali ke login atau landing.
+             Kode yang diketik sebelum login terisi otomatis di kolom. */
+          enterRedeemStep(false);
           setStatus("gate-status-redeem", "Belum bisa memeriksa akses akun (" + (err.code || "jaringan") + "). Anda sudah masuk — coba masukkan kode redeem Anda, atau periksa koneksi lalu muat ulang halaman.", true);
         });
       }
@@ -3549,6 +3582,14 @@
       function flagGet(){ try { return sessionStorage.getItem(REDIRECT_FLAG) === "1"; } catch(e){ return false; } }
       function flagSet(){ try { sessionStorage.setItem(REDIRECT_FLAG, "1"); } catch(e){} }
       function flagClear(){ try { sessionStorage.removeItem(REDIRECT_FLAG); } catch(e){} }
+      /* Kode redeem yang diketik di layar login SEBELUM masuk Google.
+         Login Google memakai redirect (halaman dimuat ulang), jadi kode
+         disimpan sementara di sessionStorage tab ini saja dan diklaim
+         otomatis begitu pengguna kembali dalam keadaan sudah login. */
+      var PENDING_CODE_KEY = "tr-pending-code";
+      function pendingCodeGet(){ try { return (sessionStorage.getItem(PENDING_CODE_KEY) || "").trim().toUpperCase(); } catch(e){ return ""; } }
+      function pendingCodeSet(c){ try { if(c) sessionStorage.setItem(PENDING_CODE_KEY, c); } catch(e){} }
+      function pendingCodeClear(){ try { sessionStorage.removeItem(PENDING_CODE_KEY); } catch(e){} }
       var redirectEmptySuspect = false;
       function showRedirectLost(){
         showStep("login");
@@ -3613,8 +3654,8 @@
         processAuthState();
       });
 
-      $("btn-google").addEventListener("click", function(){
-        setStatus("gate-status-login", "Mengarahkan ke Google…");
+      function startGoogleRedirect(statusId){
+        setStatus(statusId || "gate-status-login", window.__trLang === "en" ? "Taking you to Google…" : "Mengarahkan ke Google…");
         flagSet();
         var provider = new firebase.auth.GoogleAuthProvider();
         try {
@@ -3632,6 +3673,24 @@
           flagClear();
           setStatus("gate-status-login", "Tidak bisa mengarahkan ke Google. Periksa koneksi lalu coba lagi.", true);
         }
+      }
+      $("btn-google").addEventListener("click", function(){ startGoogleRedirect(); });
+
+      /* ---------- Kode redeem langsung di layar login ----------
+         Field kode ada di layar login itu sendiri (tidak harus menunggu
+         masuk Google dulu). Kode tetap terikat ke akun Google: bila belum
+         login, kode disimpan sementara lalu pengguna diarahkan masuk
+         Google; begitu kembali, kode diklaim otomatis (lihat loadSeat).
+         Bila sesi Google ternyata masih aktif, kode langsung diklaim. */
+      var loginRedeemForm = $("login-redeem-form");
+      if(loginRedeemForm) loginRedeemForm.addEventListener("submit", function(e){
+        e.preventDefault();
+        var code = $("login-redeem-input").value.trim().toUpperCase();
+        if(!code){ setStatus("gate-status-prelogin", window.__trLang === "en" ? "Enter your redeem code first." : "Masukkan kode redeem Anda dulu.", true); return; }
+        if(user){ showStep("redeem"); var ri = $("redeem-input"); if(ri) ri.value = code; claimCode(code); return; }
+        pendingCodeSet(code);
+        setStatus("gate-status-prelogin", window.__trLang === "en" ? "Code saved. Now sign in with Google once — your code activates automatically right after." : "Kode tersimpan. Sekarang masuk dengan Google sekali — kode Anda aktif otomatis setelahnya.");
+        startGoogleRedirect("gate-status-prelogin");
       });
 
       /* B-1(b): fallback popup bila redirect gagal/kosong. Sukses popup
@@ -3655,11 +3714,10 @@
         });
       });
 
-      /* ---------- Klaim kode redeem (transaksi) ---------- */
-      $("redeem-form").addEventListener("submit", function(e){
-        e.preventDefault();
-        var code = $("redeem-input").value.trim().toUpperCase();
-        if(!code){ setStatus("gate-status-redeem", "Masukkan kode redeem Anda dulu.", true); return; }
+      /* ---------- Klaim kode redeem (transaksi) ----------
+         Dipakai oleh form di layar redeem DAN oleh kode yang diketik di
+         layar login (diklaim otomatis setelah login Google selesai). */
+      function claimCode(code){
         var buyInfo = $("redeem-buy-info"); if(buyInfo) buyInfo.hidden = true;
         var btn = $("btn-redeem");
         btn.disabled = true;
@@ -3687,12 +3745,14 @@
           });
         }).then(function(tier){
           btn.disabled = false;
+          pendingCodeClear();
           seat = { tier: tier, category: null, code: code };
           setStatus("gate-status-redeem", "");
           afterSeat();
           if(tier !== "basic") toast(window.__trLang === "en" ? "Code active — welcome to TumbuhRata Complete!" : "Kode aktif — selamat datang di TumbuhRata Complete!");
         }).catch(function(err){
           btn.disabled = false;
+          pendingCodeClear();
           var msg;
           /* K-6: satu pesan netral untuk semua kode yang tidak bisa dipakai —
              tidak membedakan tidak ditemukan / sudah dipakai / tidak aktif,
@@ -3707,6 +3767,14 @@
              layar gerbang ini juga — jangan lempar pengguna ke landing. */
           var buyInfo = $("redeem-buy-info"); if(buyInfo){ buyInfo.hidden = false; refreshIcons(); }
         });
+      }
+
+      /* Form di layar redeem: klaim kode yang diketik di sana. */
+      $("redeem-form").addEventListener("submit", function(e){
+        e.preventDefault();
+        var code = $("redeem-input").value.trim().toUpperCase();
+        if(!code){ setStatus("gate-status-redeem", "Masukkan kode redeem Anda dulu.", true); return; }
+        claimCode(code);
       });
 
       /* ---------- Pilihan kategori (tier Basic) ---------- */
